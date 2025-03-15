@@ -1,5 +1,6 @@
 import bubble_sort
 import bogo_sort
+import merge_sort
 import time
 
 
@@ -11,6 +12,16 @@ inicio = time.perf_counter_ns()
 arr_bubble = bubble_sort.bubble_sort(arr_original.copy())
 fin = time.perf_counter_ns()
 print(f"El array resultante tras el algoritmo bubble_sort es: {arr_bubble}")
+
+tiempo_algoritmo= fin - inicio
+print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+
+#Prueba Merge sort
+inicio = time.perf_counter_ns()
+arr_merge, n_iter = merge_sort.merge_sort(arr_original.copy()), merge_sort.count_n_iter()
+print(f"el numero de iteraciones de Mergesort fue {n_iter}")
+fin = time.perf_counter_ns()
+print(f"El array resultante tras el algoritmo Mergesort es: {arr_merge}")
 
 tiempo_algoritmo= fin - inicio
 print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
