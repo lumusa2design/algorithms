@@ -17,9 +17,9 @@ print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
 
 #Pruebas Bogo sort
 inicio = time.perf_counter_ns()
-arr_bogo = bogo_sort.bogo_sort(arr_original)
+arr_bogo = bogo_sort.bogo_sort(arr_original.copy())
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo Bogosort es: {arr_bubble}")
+print(f"El array resultante tras el algoritmo Bogosort es: {arr_bogo}")
 
 tiempo_algoritmo= fin - inicio
 print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
