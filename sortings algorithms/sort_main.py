@@ -3,7 +3,9 @@ import time
 
 
 arr_original = [64, 34, 25, 12, 22, 11, 90, 1,50, 23]
+
 print(f"el array original es: {arr_original}")
+#Pruebas del Bubble sort
 inicio = time.perf_counter_ns()
 arr_bubble = bubble_sort.bubble_sort(arr_original)
 fin = time.perf_counter_ns()
