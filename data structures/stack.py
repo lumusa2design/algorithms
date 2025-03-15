@@ -25,6 +25,8 @@ class Stack:
     def head(self):
         return self.elements[-1]
 
+    def tail(self):
+        return self.elements[0]
     def __repr__(self):
         repre = ""
         for i in range(len(self)):
