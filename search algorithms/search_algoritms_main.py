@@ -25,5 +25,5 @@ def view_graphic(f, inicio, fin, method,a,b):
     plt.legend()
 
     plt.show()
-view_graphic(f, -4, 4, bisection_method, 0, 2)
+view_graphic(f, -4, 4, bisection_method, 1, 3)
 
