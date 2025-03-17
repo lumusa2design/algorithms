@@ -1,6 +1,7 @@
 import bubble_sort
 import bogo_sort
 import merge_sort
+import quick_sort
 import time
 
 
@@ -25,6 +26,16 @@ print(f"El array resultante tras el algoritmo Mergesort es: {arr_merge}")
 
 tiempo_algoritmo= fin - inicio
 print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+
+#Pruebas del quick sort
+inicio = time.perf_counter_ns()
+arr_quick = quick_sort.quicksort(arr_original.copy())
+fin = time.perf_counter_ns()
+print(f"El array resultante tras el algoritmo quick sort es: {arr_quick}")
+
+tiempo_algoritmo= fin - inicio
+print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+
 
 #Pruebas Bogo sort
 inicio = time.perf_counter_ns()
