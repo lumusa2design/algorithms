@@ -1,12 +1,15 @@
 from bisection_method import bisection_method
 from regulafalsi import regula_falsi
+from newton_raphson_method import newton_raphson
 import numpy as np
 import matplotlib.pyplot as plt
 
-def f(x):
-    return x**3 - 4*x + 1
 
-def view_graphic(f, inicio, fin, method, a, b, *args):
+def f(x):
+    return x ** 3 - 4 * x + 1
+
+
+def view_graphic(f, inicio, fin, method, a, b=None, *args):
     x = np.linspace(inicio, fin, 500)
     y = f(x)
 
@@ -17,9 +20,12 @@ def view_graphic(f, inicio, fin, method, a, b, *args):
     plt.grid(True, linestyle="--", alpha=0.6)
 
     try:
-        punto_x = method(f, a, b, *args)
-        punto_y = f(punto_x)
+        if b is None:  # Para Newton-Raphson, solo necesita un punto inicial
+            punto_x = method(f, a, *args)
+        else:
+            punto_x = method(f, a, b, *args)
 
+        punto_y = f(punto_x)
         plt.scatter(punto_x, punto_y, color="red", zorder=3, label=f"Punto ({punto_x:.6f}, {punto_y:.6f})")
     except ValueError:
         print("El método no puede encontrar una raíz en el intervalo dado.")
@@ -30,6 +36,8 @@ def view_graphic(f, inicio, fin, method, a, b, *args):
     plt.legend()
     plt.show()
 
+
 # Pruebas con diferentes métodos
 view_graphic(f, -4, 4, bisection_method, 1, 3)
 view_graphic(f, -4, 4, regula_falsi, 1, 3, 100)
+view_graphic(f, -4, 4, newton_raphson, -3, 100)
