@@ -1,4 +1,3 @@
-import auxiliar_functions
 def stalin_sort(arr):
     pivot = arr [0]
     res = [arr[0]]
