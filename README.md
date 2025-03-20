@@ -16,7 +16,6 @@ A short personal project where I will be developing different algorithms from th
 
 - Probabilistic algorithms
 
-- Probabilistic algorithms
 
 - Genetic algorithms
 
