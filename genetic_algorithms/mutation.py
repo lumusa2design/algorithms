@@ -1,8 +1,8 @@
 import random
 
-def mutation(arr, space):
+def mutation(arr, space, probability=20):
     for i in range(len(arr)):
-        if random.choice([True, False]):
+        if random.randint(0, 100) < probability:
             arr[i] = random.choice(space)
     return arr
 
