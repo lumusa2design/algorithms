@@ -24,5 +24,6 @@ class TestSortMethods(unittest.TestCase):
         arr = bubble_sort(arr)
         self.assertTrue(is_order(arr))
 
+
 if __name__=='__main__':
     unittest.main()
