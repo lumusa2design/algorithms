@@ -12,5 +12,5 @@ def fill_matrix(arr):
         for j in range(len(arr[i])):
             arr[i][j] = input(f'introduzca el valor para la posicion{i},{j}: ')
 
-arr = create_matrix(2,1)
+arr = create_matrix(12,12)
 print(arr)

@@ -5,6 +5,7 @@ from quick_sort import quicksort
 from bogo_sort import bogo_sort
 from bubble_sort import bubble_sort
 from counting_sort import counting_sort
+from stalin_sort import stalin_sort
 class TestSortMethods(unittest.TestCase):
     def test_merge(self):
         arr = [10,9,8,7,6,42,1]
@@ -24,10 +25,15 @@ class TestSortMethods(unittest.TestCase):
         arr = [10, 9, 8, 7, 6, 42, 1]
         arr = bubble_sort(arr)
         self.assertTrue(is_order(arr))
+
     def test_countingsort(self):
         arr = [10, 9, 8, 7, 6, 42, 1]
         arr = counting_sort(arr)
         self.assertTrue(is_order(arr))
 
+    def test_staling_sort(self):
+        arr = [10, 9, 8, 7, 6, 42, 1]
+        arr = stalin_sort(arr)
+        self.assertTrue(is_order(arr))
 if __name__=='__main__':
     unittest.main()
