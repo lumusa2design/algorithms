@@ -6,18 +6,34 @@ A short personal project where I will be developing different algorithms from th
 
 ## 💻 Type of algorithms
 
-- Sortings algorithms
+### Sortings algorithms
+sorting algorithms
+These are algorithms that take unordered lists and after a series of iterations, return a sorted list.
+At the moment we have developed the following algorithms:
+- Bogosort
+- Bubblesort
+- Countingsort
+- Insertionsort
+- Selectionsort
+- Stalinsort
 
-- Data structures
+#### Algorithms to implement:
 
-- Search algorithms
+- Radixsort
+- Heapsort
+- Bucketsort
+- 
 
-- Predictive algorithms
+### Data structures
 
-- Probabilistic algorithms
+### Search algorithms
+
+### Predictive algorithms
+
+### Probabilistic algorithms
 
 
-- Genetic algorithms
+### Genetic algorithms
 
 
 
