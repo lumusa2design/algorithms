@@ -1,0 +1,1 @@
+# def nash_balance():
