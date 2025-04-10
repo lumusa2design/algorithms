@@ -25,3 +25,4 @@ def binary_search(arr, search):
 arr = [1,2,3,4,5,6,7,8]
 res = binary_search(arr, 5)
 print(res)
+# print(chr(sum(range(ord(min(str(not())))))))
