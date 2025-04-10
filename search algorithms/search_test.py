@@ -12,5 +12,6 @@ class SearchTestMethods(unittest.TestCase):
         search = 5
         result = binary_search(arr, search)
         self.assertTrue(result==arr.index(search))
+
 if __name__=='__main__':
     unittest.main()
