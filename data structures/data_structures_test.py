@@ -1,15 +1,14 @@
 import unittest
 import queue
-from queue import Queue
 
 
 class TestSortMethods(unittest.TestCase):
-    def Queue_test(self):
-        cola = Queue()
-        cola.enqueue(1)
-        cola.enqueue(2)
-        cola.enqueue(3)
-        self.assertTrue(cola.dequeueu)
+    def test_queue(self):
+        cola = queue.Queue()
+        cola.queue.enqueue(1)
+        cola.queue.enqueue(2)
+        cola.queue.enqueue(3)
+        self.assertTrue(cola.queue.dequeue() == 1)
         print(cola)
 
 if __name__ == "__main__":
