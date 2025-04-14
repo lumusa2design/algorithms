@@ -1,12 +1,12 @@
 from bisection_method import bisection_method
 from regulafalsi import regula_falsi
 from newton_raphson_method import newton_raphson
+from muller_method import muller_method
 import numpy as np
 import matplotlib.pyplot as plt
 from secant_method import secant_method
 def f(x):
     return x ** 3 - 4 * x + 1
-
 
 def view_graphic(f, inicio, fin, method, a, b=None, *args):
     x = np.linspace(inicio, fin, 500)
@@ -41,3 +41,4 @@ view_graphic(f, -4, 4, bisection_method, 1, 3)
 view_graphic(f, -4, 4, regula_falsi, 1, 3, 100)
 view_graphic(f, -4, 4, newton_raphson, -3, 100)
 view_graphic(f, -4, 4, secant_method, 1,3)
+view_graphic(f, 1, -1,muller_method, 1000, 1e-12)
