@@ -50,6 +50,12 @@ class Simple_Linked_List:
             position += 1
         self.last_node = self.find_node_by_position(self.len - 1) if self.len > 0 else None
 
+    def insert_by_position(self, position, value):
+        if position > self.len:
+            return "No es tan grande"
+        actual = self.first_node
+        for i in range(position -1):
+
     def __str__(self):
         actual = self.first_node
         lista_str = ""
