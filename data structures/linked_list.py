@@ -56,6 +56,7 @@ class Simple_Linked_List:
         actual = self.first_node
         for i in range(position -1):
 
+
     def __str__(self):
         actual = self.first_node
         lista_str = ""
