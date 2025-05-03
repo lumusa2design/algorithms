@@ -55,7 +55,7 @@ class Simple_Linked_List:
             return "No es tan grande"
         actual = self.first_node
         for i in range(position -1):
-
+            print(i)
 
     def __str__(self):
         actual = self.first_node

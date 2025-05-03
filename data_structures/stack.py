@@ -36,19 +36,3 @@ class Stack:
                 repre += f"{self.elements[i]}"
         return repre
 
-Pila = Stack()
-print(Pila.is_empty())
-Pila.insert(5)
-Pila.insert(2)
-Pila.insert(3)
-Pila.insert(1)
-Pila.insert(4)
-print(Pila.is_empty())
-Pila.insert(8)
-print(Pila.head())
-print(Pila)
-print(Pila.pop())
-print(Pila.head())
-print(Pila)
-Pila.clear_stack()
-print(Pila.is_empty())
