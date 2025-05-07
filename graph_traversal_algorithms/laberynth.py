@@ -3,24 +3,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import random
 from matplotlib.colors import ListedColormap
+from data_structures.stack import Stack
+from graph_traversal_algorithms.DFS import *
+from graph_traversal_algorithms.BFS import BFS, BFS_find_way
 
-# ----------------------------
-# Clase Stack
-# ----------------------------
-class Stack:
-    def __init__(self):
-        self.stack = []
-    def insert(self, item):
-        self.stack.append(item)
-    def pop(self):
-        return self.stack.pop()
-    def is_empty(self):
-        return not self.stack
-
-# ----------------------------
-# DFS que devuelve el camino correcto y los nodos explorados
-# ----------------------------
-def DFS_camino_correcto(graph, start, goal):
+'''def DFS_camino_correcto(graph, start, goal):
     stack = Stack()
     came_from = {}
     visited = set()
@@ -48,7 +35,7 @@ def DFS_camino_correcto(graph, start, goal):
                 came_from[neighbor] = current
                 stack.insert(neighbor)
 
-    return recorrido, []  # No hay camino
+    return recorrido, []  # No hay camino'''
 
 # ----------------------------
 # Generar laberinto
@@ -91,7 +78,7 @@ def laberinto_a_grafo(matriz):
 # ----------------------------
 # Visualización combinada: recorrido rojo + camino verde
 # ----------------------------
-def visualizar_exploracion_y_camino(matriz_original, recorrido, path, inicio, fin, delay=0.01):
+def visualizar_exploracion_y_camino(matriz_original, recorrido, inicio, fin, delay=0.0009):
     matriz_vis = np.copy(matriz_original).astype(int)
 
     # Colormap:
@@ -117,30 +104,31 @@ def visualizar_exploracion_y_camino(matriz_original, recorrido, path, inicio, fi
         plt.draw()
         plt.pause(delay)
 
-    # Pintar el camino correcto en verde fosforito
-    for x, y in path:
-        if (x, y) != inicio and (x, y) != fin:
-            matriz_vis[x][y] = 5
-        img.set_data(matriz_vis)
-        plt.draw()
-        plt.pause(delay / 2)  # un poco más rápido
-
     plt.title("Camino encontrado por DFS")
     plt.show()
 
 if __name__ == "__main__":
-    ancho, alto = 21, 21
+    ancho, alto = 30, 30
     inicio = (0, 0)
-    fin = (alto - 1, ancho - 1)
+    fin = (alto - 2, ancho - 2)
 
     lab = crear_laberinto_con_camino(ancho, alto)
     grafo = laberinto_a_grafo(lab)
 
-    recorrido_dfs, camino_correcto = DFS_camino_correcto(grafo, inicio, fin)
+    """recorrido_dfs = DFS(grafo,inicio)
 
     # Mostrar camino en consola
     print("🟢 Camino correcto desde inicio hasta fin:")
-    for paso in camino_correcto:
-        print(paso)
+    '''for paso in camino_correcto:
+        print(paso)'''
 
-    visualizar_exploracion_y_camino(lab, recorrido_dfs, camino_correcto, inicio, fin)
+    visualizar_exploracion_y_camino(lab, recorrido_dfs, inicio, fin)
+
+    recorrido_bfs = BFS(grafo, inicio)
+    visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)"""
+
+    recorrido_dfs_solution = DFS_find_way(grafo, inicio, fin)
+    visualizar_exploracion_y_camino(lab, recorrido_dfs_solution, inicio, fin)
+
+    recorrido_bfs = BFS_find_way(grafo, inicio, fin)
+    visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)

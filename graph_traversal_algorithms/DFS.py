@@ -14,6 +14,22 @@ def DFS(graph, first_node):
                 stack.insert(neighbour)
     return visited
 
+def DFS_find_way(graph, first_node, goal):
+    visited, viewed, stack, iter = [], set(), Stack(), 0
+    viewed.add(first_node)
+    stack.insert(first_node)
+
+    while not stack.is_empty() and goal not in visited:
+        actual_node = stack.pop()
+        visited.append(actual_node)
+        iter += 1
+        for neighbour in graph.neighbors(actual_node):
+            if neighbour not in viewed:
+                viewed.add(neighbour)
+                stack.insert(neighbour)
+    print(f"Numero de iteraciones: {iter}\n")
+    return visited
+
 
 g = nx.Graph()
 g.add_edge('A', 'B')
