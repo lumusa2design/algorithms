@@ -108,7 +108,7 @@ def visualizar_exploracion_y_camino(matriz_original, recorrido, inicio, fin, del
     plt.show()
 
 if __name__ == "__main__":
-    ancho, alto = 30, 30
+    ancho, alto = 40, 40
     inicio = (0, 0)
     fin = (alto - 2, ancho - 2)
 
