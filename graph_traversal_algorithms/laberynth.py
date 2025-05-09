@@ -6,6 +6,7 @@ from matplotlib.colors import ListedColormap
 from data_structures.stack import Stack
 from graph_traversal_algorithms.DFS import *
 from graph_traversal_algorithms.BFS import BFS, BFS_find_way
+from graph_traversal_algorithms.dijkstra_algorithm import dijkstra
 
 '''def DFS_camino_correcto(graph, start, goal):
     stack = Stack()
@@ -72,8 +73,9 @@ def laberinto_a_grafo(matriz):
                 for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
                     nx_, ny_ = x + dx, y + dy
                     if 0 <= nx_ < filas and 0 <= ny_ < cols and matriz[nx_][ny_] == 0:
-                        G.add_edge((x, y), (nx_, ny_))
+                        G.add_edge((x, y), (nx_, ny_), weight=1)  # Añadir peso explícito
     return G
+
 
 # ----------------------------
 # Visualización combinada: recorrido rojo + camino verde
@@ -108,7 +110,7 @@ def visualizar_exploracion_y_camino(matriz_original, recorrido, inicio, fin, del
     plt.show()
 
 if __name__ == "__main__":
-    ancho, alto = 40, 40
+    ancho, alto = 20, 20
     inicio = (0, 0)
     fin = (alto - 2, ancho - 2)
 
@@ -132,3 +134,6 @@ if __name__ == "__main__":
 
     recorrido_bfs = BFS_find_way(grafo, inicio, fin)
     visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)
+
+    recorrido_dijkstra = dijkstra(grafo, inicio, fin)
+    visualizar_exploracion_y_camino(lab, recorrido_dijkstra, inicio, fin)
