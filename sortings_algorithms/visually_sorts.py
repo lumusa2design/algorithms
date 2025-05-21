@@ -108,9 +108,37 @@ def visually_counting_sort(lista):
 
 
 
+def visually_insertion_sort(lista):
+    arr = lista.copy()
+    fig, ax = plt.subplots()
+    colores = cm.hsv(np.linspace(0, 1, len(arr)))
+    bar_rects = ax.bar(range(len(arr)), arr, color=colores, align="edge")
+
+    ax.set_title("Insertion Sort")
+    ax.set_xlim(0, len(arr))
+    ax.set_ylim(0, max(arr) * 1.1)
+    text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+    def update_bars(arr, step_desc=""):
+        for k, (bar, val) in enumerate(zip(bar_rects, arr)):
+            bar.set_height(val)
+            bar.set_color(cm.hsv(float(val) / float(max(arr)) if max(arr) > 0 else 0))
+        text.set_text(step_desc)
+        plt.pause(0.1)
+
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+
+        while j >= 0 and arr[j] > key:
+            arr[j+1] = arr[j]
+            j = j -1
+            update_bars(arr)
+        arr[j+1] = key
+    return arr
 
 
 arr = list(range(18, 0, -1))
-visually_bubble_sort(arr)
-visually_bogo_sort(arr)
-visually_counting_sort(arr)
+#visually_bubble_sort(arr)
+#visually_bogo_sort(arr)
+#visually_counting_sort(arr)
+visually_insertion_sort(arr)
