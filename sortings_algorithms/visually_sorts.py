@@ -136,9 +136,68 @@ def visually_insertion_sort(lista):
         arr[j+1] = key
     return arr
 
+def visually_merge_sort(lista):
+    arr = lista.copy()
+    fig, ax = plt.subplots()
+    colores = cm.hsv(np.linspace(0, 1, len(arr)))
+    bar_rects = ax.bar(range(len(arr)), arr, color=colores, align="edge")
+
+    ax.set_title("Merge Sort")
+    ax.set_xlim(0, len(arr))
+    ax.set_ylim(0, max(arr) * 1.1)
+    text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+    def update_bars(arr, step_desc=""):
+        for k, (bar, val) in enumerate(zip(bar_rects, arr)):
+            bar.set_height(val)
+            bar.set_color(cm.hsv(float(val) / float(max(lista))))
+        text.set_text(step_desc)
+        plt.pause(0.2)
+
+    def merge_sort(arr, left, right):
+        if left < right:
+            middle = (left + right) // 2
+            merge_sort(arr, left, middle)
+            merge_sort(arr, middle + 1, right)
+            merge(arr, left, middle, right)
+            update_bars(arr, f"Fusionando: {left}-{right}")
+
+    def merge(arr, left, middle, right):
+        n1 = middle - left + 1
+        n2 = right - middle
+        L = arr[left:left+n1]
+        R = arr[middle+1:middle+1+n2]
+
+        i = j = 0
+        k = left
+
+        while i < len(L) and j < len(R):
+            if L[i] <= R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+
+    merge_sort(arr, 0, len(arr)-1)
+    plt.show()
+    return arr
+
 
 arr = list(range(18, 0, -1))
 #visually_bubble_sort(arr)
 #visually_bogo_sort(arr)
 #visually_counting_sort(arr)
-visually_insertion_sort(arr)
+#visually_insertion_sort(arr)
+visually_merge_sort(arr)
