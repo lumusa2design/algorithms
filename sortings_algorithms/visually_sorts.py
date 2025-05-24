@@ -199,35 +199,39 @@ def visually_quick_sort(arr):
     fig, ax = plt.subplots()
     colores = cm.hsv(np.linspace(0, 1, len(lista)))
     bar_rects = ax.bar(range(len(lista)), lista, color=colores, align="edge")
-
     ax.set_title("Quick Sort")
     ax.set_xlim(0, len(lista))
     ax.set_ylim(0, max(lista) * 1.1)
     text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
-    def update_bars(arr, step_desc=""):
-        for k, (bar, val) in enumerate(zip(bar_rects, arr)):
+
+    def update_bars(data, step_desc=""):
+        for k, (bar, val) in enumerate(zip(bar_rects, data)):
             bar.set_height(val)
             bar.set_color(cm.hsv(float(val) / float(max(lista))))
         text.set_text(step_desc)
-        plt.pause(0.2)
-    if not arr:
-        return []
-    if len(arr) == 1:
-        return arr
-    left = []
-    right=[]
-    pivot = arr[-1]
-    for i in arr[:-1]:
+        plt.pause(0.01)
 
-        if i <= pivot:
-            left.append(i)
-            update_bars(arr)
-        else:
-            right.append(i)
-            update_bars(arr)
-    res = visually_quick_sort(left) + [pivot] + visually_quick_sort(right)
+    def quick_sort_in_place(data, low, high):
+        if low < high:
+            pivot_index = partition(data, low, high)
+            quick_sort_in_place(data, low, pivot_index - 1)
+            quick_sort_in_place(data, pivot_index + 1, high)
+
+    def partition(data, low, high):
+        pivot = data[high]
+        i = low - 1
+        for j in range(low, high):
+            if data[j] <= pivot:
+                i += 1
+                data[i], data[j] = data[j], data[i]
+                update_bars(lista, f"Swapped {data[i]} and {data[j]}")
+        data[i + 1], data[high] = data[high], data[i + 1]
+        update_bars(lista, f"Moved pivot {data[i+1]}")
+        return i + 1
+
+    quick_sort_in_place(lista, 0, len(lista) - 1)
     plt.show()
-    return res
+    return lista
 
 arr = list(range(18, 0, -1))
 #visually_bubble_sort(arr)
@@ -235,4 +239,4 @@ arr = list(range(18, 0, -1))
 #visually_counting_sort(arr)
 #visually_insertion_sort(arr)
 #visually_merge_sort(arr)
-#visually_quick_sort(arr)
+visually_quick_sort(arr)
