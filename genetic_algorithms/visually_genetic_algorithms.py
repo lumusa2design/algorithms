@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import one_point_crossover as opc
 import two_point_crossover as tpc
-
+import uniform_crossover as uc
 
 def draw_individual(ax, individual, title, crossover_point=None, highlight=False):
     ax.set_title(title)
@@ -63,5 +63,22 @@ def visualize_two_point_crossover(first_point, second_point, father, mother):
     plt.tight_layout()
     plt.show()
 
+def visualize_uniform_crossover(father, mother):
+    fig, axs = plt.subplots(2, 1, figsize=(len(father), 2))
+    draw_individual(axs[0], father, "Father")
+    draw_individual(axs[1], mother, "Mother")
+    plt.suptitle(f" Before crossover", fontsize=14)
+    plt.tight_layout()
+    plt.show()
+
+    new_father, new_mother = uc.uniform_crossover( father, mother), uc.uniform_crossover(father, mother)
+
+    fig, axs = plt.subplots(2, 1, figsize=(len(father), 2))
+    draw_individual(axs[0], new_father, "Son 1 (father after crossover)", highlight=True)
+    draw_individual(axs[1], new_mother, "Son 2 (mother after crossover)", highlight=True)
+    plt.suptitle(f"Después del cruce", fontsize=14)
+    plt.tight_layout()
+    plt.show()
 #visualize_one_point_crossover(father, mother, crossover_point)
-visualize_two_point_crossover(3, 6, father, mother)
+# visualize_two_point_crossover(3, 6, father, mother)
+visualize_uniform_crossover(father, mother)
