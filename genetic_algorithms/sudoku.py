@@ -178,7 +178,7 @@ fitness_over_time = []
 
 def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
     def fitness(individual):
-        board = [individual[i * 9:(i + 1) * 9] for i in range(9)]
+        board = [individual[i*9:(i+1)*9] for i in range(9)]
         errors = 0
         for row in board:
             errors += (9 - len(set(row)))
@@ -186,7 +186,7 @@ def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
             errors += (9 - len(set(col)))
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
-                block = [board[x][y] for x in range(i, i + 3) for y in range(j, j + 3)]
+                block = [board[x][y] for x in range(i, i+3) for y in range(j, j+3)]
                 errors += (9 - len(set(block)))
         return 243 - errors
 
@@ -201,62 +201,66 @@ def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
     no_improvement_count = 0
     best_fitness = fitness(best)
 
-    for generation in range(generations):
-        elite = max(population, key=fitness)
-        new_population = [elite]
+    with open("generations.txt", "w", encoding="utf-8") as f:
+        for generation in range(generations):
+            elite = max(population, key=fitness)
+            new_population = [elite]
 
-        while len(new_population) < population_size:
-            parents = [tournament_selection(population) for _ in range(2)]
-            child = uniform_crossover(parents[0][:], parents[1][:])
+            while len(new_population) < population_size:
+                parents = [tournament_selection(population) for _ in range(2)]
+                child = uniform_crossover(parents[0][:], parents[1][:])
 
-            if random.random() < 0.5:
-                child = smart_mutation(child, puzzle, probability=20)
+                if random.random() < 0.5:
+                    child = smart_mutation(child, puzzle, probability=20)
+                else:
+                    child = row_mutation(child, puzzle)
+
+                if random.random() < 0.3:
+                    child = repair_individual(child, puzzle)
+
+                for i in range(81):
+                    if puzzle[i] != 0:
+                        child[i] = puzzle[i]
+
+                fitness_child = fitness(child)
+                f.write(f"Generation {generation:03d} - Fitness: {fitness_child:.2f} - Child: {','.join(map(str, child))}\n")
+                new_population.append(child)
+
+            population = sorted(new_population, key=fitness, reverse=True)
+            best = population[0]
+            current_fitness = fitness(best)
+            history.append(best[:])
+            fitness_over_time.append(current_fitness)
+
+            print(f"Generation {generation:03d} → Fitness: {current_fitness/243*100:.2f}%")
+
+            if current_fitness > best_fitness:
+                best_fitness = current_fitness
+                no_improvement_count = 0
             else:
-                child = row_mutation(child, puzzle)
+                no_improvement_count += 1
 
-            if random.random() < 0.3:
-                child = repair_individual(child, puzzle)
+            if no_improvement_count >= 200:
+                print("Estancamiento detectado. Regenerando parte de la población...")
+                for i in range(1, population_size):
+                    population[i] = initialize_individual(puzzle)
+                no_improvement_count = 0
 
-            for i in range(81):
-                if puzzle[i] != 0:
-                    child[i] = puzzle[i]
-
-            new_population.append(child)
-
-        population = sorted(new_population, key=fitness, reverse=True)
-        best = population[0]
-        current_fitness = fitness(best)
-        history.append(best[:])
-        fitness_over_time.append(current_fitness)
-
-        print(f"generation {generation:03d} → Fitness: {current_fitness/243 * 100} %")
-
-        if current_fitness > best_fitness:
-            best_fitness = current_fitness
-            no_improvement_count = 0
-        else:
-            no_improvement_count += 1
-
-        if no_improvement_count >= 200:
-            print("Stuck, created a new generation")
-            for i in range(1, population_size):
-                population[i] = initialize_individual(puzzle)
-            no_improvement_count = 0
-
-        if current_fitness >= 225:
-            solved = solve_linear(best)
-            if fitness(solved) > current_fitness:
-                best = solved
-                history.append(best[:])
-                fitness_over_time.append(fitness(best))
+            if current_fitness >= 225:
+                solved = solve_linear(best)
+                if fitness(solved) > current_fitness:
+                    best = solved
+                    history.append(best[:])
+                    fitness_over_time.append(fitness(best))
+                    if fitness(best) == 243:
+                        print("¡Solución exacta encontrada!")
+                        break
                 if fitness(best) == 243:
-                    print("Find Solution")
+                    print("¡Solución exacta encontrada!")
                     break
-            if fitness(best) == 243:
-                print("Find Solution")
-                break
 
     return best
+
 
 if __name__ == "__main__":
     full_board = generate_full_board()
