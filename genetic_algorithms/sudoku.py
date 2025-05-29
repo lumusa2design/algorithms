@@ -263,12 +263,14 @@ def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
 
 
 if __name__ == "__main__":
+    print("Introduce holes: ")
+    holes = int(input())
     full_board = generate_full_board()
-    puzzle = remove_cells(full_board, holes=40)
+    puzzle = remove_cells(full_board, holes)
     flattened_puzzle = sum(puzzle, [])
 
     start_time = time.time()
-    solution = optimized_genetic_algorithm(flattened_puzzle, generations=3000, population_size=500)
+    solution = optimized_genetic_algorithm(flattened_puzzle, generations=1000, population_size=200)
     end_time = time.time()
     print(f"\nTotal Time: {end_time - start_time:.2f} seconds")
 
