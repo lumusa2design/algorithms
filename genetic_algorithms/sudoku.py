@@ -241,7 +241,7 @@ def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
                 no_improvement_count += 1
 
             if no_improvement_count >= 200:
-                print("Estancamiento detectado. Regenerando parte de la población...")
+                print("Generation stuck... created new population")
                 for i in range(1, population_size):
                     population[i] = initialize_individual(puzzle)
                 no_improvement_count = 0
