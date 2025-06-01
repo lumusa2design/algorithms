@@ -260,6 +260,47 @@ def visually_selection_sort(arr):
 
     return arr
 
+def visually_stalin_sort(arr):
+    original = arr.copy()
+    fig, ax = plt.subplots()
+    colores = cm.hsv(np.linspace(0, 1, len(original)))
+    bar_rects = ax.bar(range(len(original)), original, color=colores, align="edge")
+
+    ax.set_title("Stalin Sort")
+    ax.set_xlim(0, len(original))
+    ax.set_ylim(0, max(original) * 1.1)
+    text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+    def update_bars(current_arr, highlight_index=None, removed_index=None):
+        for i, bar in enumerate(bar_rects):
+            if i < len(current_arr):
+                bar.set_height(current_arr[i])
+                if i == highlight_index:
+                    bar.set_color('green')
+                elif i == removed_index:
+                    bar.set_color('red')
+                else:
+                    bar.set_color(cm.hsv(float(current_arr[i]) / float(max(original))))
+            else:
+                bar.set_height(0)
+                bar.set_color('white')
+        plt.pause(0.5)
+
+    pivot = arr[0]
+    result = [pivot]
+    current_arr = arr.copy()
+    update_bars(current_arr, highlight_index=0)
+
+    for i in range(1, len(arr)):
+        if arr[i] >= pivot:
+            pivot = arr[i]
+            result.append(pivot)
+            update_bars(current_arr, highlight_index=i)
+        else:
+            update_bars(current_arr, removed_index=i)
+            current_arr[i] = 0
+
+
 arr = list(range(18, 0, -1))
 #visually_bubble_sort(arr)
 #visually_bogo_sort(arr)
@@ -267,4 +308,5 @@ arr = list(range(18, 0, -1))
 #visually_insertion_sort(arr)
 #visually_merge_sort(arr)
 #visually_quick_sort(arr)
-visually_selection_sort(arr)
+#visually_selection_sort(arr)
+visually_stalin_sort(arr)
