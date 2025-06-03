@@ -1,10 +1,8 @@
 import unittest
-from graph_traversal_algorithms import  *
 from graph_traversal_algorithms import BFS
 from graph_traversal_algorithms import DFS
 from graph_traversal_algorithms import dijkstra_algorithm
 import networkx as nx
-from graph_traversal_algorithms import non_directed_graph
 
 def build_graph():
     g = nx.Graph()

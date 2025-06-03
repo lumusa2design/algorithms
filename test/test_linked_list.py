@@ -1,8 +1,5 @@
 import unittest
-import sys
-import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'data_structures'))
-import linked_list
+from data_structures import linked_list
 
 class TestLinkedList(unittest.TestCase):
     def test_operations(self):
