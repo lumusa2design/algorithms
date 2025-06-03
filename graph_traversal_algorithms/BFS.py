@@ -1,5 +1,3 @@
-from non_directed_graph import build_graph
-from sys import maxsize
 from data_structures.Queue import Queue
 import networkx as nx
 
