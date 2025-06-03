@@ -12,8 +12,7 @@ class Queue:
         return self.elements.pop()
 
     def is_empty(self):
-        if(self.length == 0):
-            return True
+        return self.length == 0
 
     def head(self):
         return self.elements[-1]
@@ -23,6 +22,7 @@ class Queue:
 
     def clear_queue(self):
         self.elements = []
+        self.length = 0
 
     def __len__(self):
         return self.length
@@ -38,11 +38,4 @@ class Queue:
 
 
 
-cola = Queue()
-cola.enqueue(1)
-cola.enqueue(2)
-cola.enqueue(3)
-print(cola)
-print(cola.dequeue())
-print(cola)
 
