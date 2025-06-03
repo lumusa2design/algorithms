@@ -11,3 +11,15 @@ def vigenere_encrypt(message, key):
         index += 1
     return codified_message
 
+
+def vigenere_decrypt(codified_message, key):
+    index, code_index = 0, 0
+    codified_message, key, decodified_message = codified_message.upper(), key.upper(), ""
+    while index < len(codified_message):
+        if codified_message[index].isalpha():
+            decodified_message += chr((ord(codified_message[index]) - ord('A') - (ord(key[code_index % len(key)]) - ord('A'))) % 26 + ord('A'))
+            code_index += 1
+        else:
+            decodified_message += codified_message[index]
+        index += 1
+    return decodified_message
