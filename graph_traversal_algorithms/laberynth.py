@@ -1,12 +1,34 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import networkx as nx
 import random
 from matplotlib.colors import ListedColormap
-from data_structures.stack import Stack
 from graph_traversal_algorithms.DFS import *
-from graph_traversal_algorithms.BFS import BFS, BFS_find_way
+from graph_traversal_algorithms.BFS import BFS_find_way
 from graph_traversal_algorithms.dijkstra_algorithm import dijkstra
+from matplotlib.animation import FuncAnimation, PillowWriter
+
+
+
+def guardar_animacion(matriz_original, recorrido, inicio, fin, filename="animacion.gif", fps=10):
+    matriz_vis = np.copy(matriz_original).astype(int)
+    cmap = ListedColormap(["white", "black", "red", "blue", "green", "#39FF14"])
+    fig, ax = plt.subplots(figsize=(8, 8))
+    img = ax.imshow(matriz_vis, cmap=cmap, vmin=0, vmax=5)
+    plt.xticks([]), plt.yticks([])
+
+    def update(frame):
+        x, y = recorrido[frame]
+        if (x, y) != inicio and (x, y) != fin:
+            matriz_vis[x][y] = 2  # rojo (visitado)
+        matriz_vis[inicio] = 3
+        matriz_vis[fin] = 4
+        img.set_data(matriz_vis)
+        return [img]
+
+    anim = FuncAnimation(fig, update, frames=len(recorrido), interval=1000/fps, blit=True)
+    anim.save(filename, writer=PillowWriter(fps=fps))
+    plt.close()
+
 
 '''def DFS_camino_correcto(graph, start, goal):
     stack = Stack()
@@ -130,10 +152,10 @@ if __name__ == "__main__":
     visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)"""
 
     recorrido_dfs_solution = DFS_find_way(grafo, inicio, fin)
-    visualizar_exploracion_y_camino(lab, recorrido_dfs_solution, inicio, fin)
+    guardar_animacion(lab, recorrido_dfs_solution, inicio, fin, filename="dfs_exploracion.gif",fps=20)
 
     recorrido_bfs = BFS_find_way(grafo, inicio, fin)
-    visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)
+    guardar_animacion(lab, recorrido_bfs, inicio, fin, filename="bfs_exploracion.gif", fps=20)
 
     recorrido_dijkstra = dijkstra(grafo, inicio, fin)
-    visualizar_exploracion_y_camino(lab, recorrido_dijkstra, inicio, fin)
+    guardar_animacion(lab, recorrido_dijkstra, inicio, fin, filename="dijkstra_exploracion.gif",  fps=20)
