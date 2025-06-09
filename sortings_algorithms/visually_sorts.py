@@ -300,6 +300,51 @@ def visually_stalin_sort(arr):
             update_bars(current_arr, removed_index=i)
             current_arr[i] = 0
 
+def visually_bogobogosort(arr):
+    lista = arr.copy()
+    fig, ax = plt.subplots()
+    colores = cm.hsv(np.linspace(0, 1, len(lista)))
+    bar_rects = ax.bar(range(len(lista)), lista, color=colores, align="edge")
+
+    ax.set_title("Bogobogo Sort")
+    ax.set_xlim(0, len(lista))
+    ax.set_ylim(0, max(lista) * 1.1)
+    text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+    def update_bars(current_arr, step_desc=""):
+        for k, (bar, val) in enumerate(zip(bar_rects, current_arr + [0]*(len(lista)-len(current_arr)))):
+            bar.set_height(val)
+            bar.set_color(cm.hsv(float(val) / float(max(lista))) if val > 0 else "white")
+        text.set_text(step_desc)
+        plt.pause(0.2)
+
+    def visually_bogo_sort_partial(subarr):
+        temp = subarr.copy()
+        while not is_order(temp):
+            random.shuffle(temp)
+            update_bars(temp, "Bogo ordenando subarray")
+        return temp
+
+    working_list = lista.copy()
+    counter = 0
+
+    while not is_order(working_list):
+        if counter > 0:
+            random.shuffle(working_list)
+            update_bars(working_list, f"Shuffle completo #{counter}")
+
+        last = working_list.pop()
+        update_bars(working_list, f"Pop del último: {last}")
+
+        ordered_part = visually_bogo_sort_partial(working_list)
+        ordered_part.append(last)
+        working_list = ordered_part.copy()
+        update_bars(working_list, f"Añadido de nuevo: {last}")
+        counter += 1
+
+    plt.show()
+    return working_list
+
 
 arr = list(range(18, 0, -1))
 #visually_bubble_sort(arr)
@@ -309,4 +354,5 @@ arr = list(range(18, 0, -1))
 #visually_merge_sort(arr)
 #visually_quick_sort(arr)
 #visually_selection_sort(arr)
-visually_stalin_sort(arr)
+#visually_stalin_sort(arr)
+visually_bogobogosort(arr)
