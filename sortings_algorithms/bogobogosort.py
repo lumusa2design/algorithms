@@ -1,6 +1,8 @@
 from auxiliar_functions import is_order
 from bogo_sort import bogo_sort
 import random
+
+
 def bogobogosort(arr):
     array_list = arr.copy()
     counter = 0
