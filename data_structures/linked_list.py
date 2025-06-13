@@ -53,37 +53,19 @@ class Simple_Linked_List:
     def insert_by_position(self, position, value):
         if position > self.len:
             return "No es tan grande"
-        actual = self.first_node
         for i in range(position -1):
             print(i)
 
     def __str__(self):
         actual = self.first_node
-        lista_str = ""
+        list_str = ""
         while actual is not None:
-            lista_str += str(actual) + ", "
+            list_str += str(actual) + ", "
             actual = actual.next_node
-        return lista_str.strip(", ")
+        return list_str.strip(", ")
 
     def __len__(self):
         return self.len
 
 
-
-lista_encadenada = Simple_Linked_List(5)
-lista_encadenada.add_node(1)
-lista_encadenada.add_node(2)
-lista_encadenada.add_node(3)
-lista_encadenada.add_node(4)
-lista_encadenada.add_node(6)
-lista_encadenada.add_node(7)
-print(lista_encadenada.find_node_by_position(2).value)
-print(lista_encadenada.find_node_by_position(len(lista_encadenada)-1))
-print(lista_encadenada)
-lista_encadenada.remove_node_by_position(len(lista_encadenada)-1)
-print(lista_encadenada)
-print(lista_encadenada.find_node_by_position(len(lista_encadenada)-1))
-print(lista_encadenada)
-lista_encadenada.remove_node_by_position(len(lista_encadenada)-1)
-print(lista_encadenada)
 
