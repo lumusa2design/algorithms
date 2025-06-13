@@ -33,7 +33,7 @@ class DoubleLinkedList:
 
     def find_node_by_position(self, position):
         if position < 0 or position >= self.length:
-            raise IndexError("Posición fuera de rango")
+            raise IndexError("index out of range")
         actual = self.first_node
         for _ in range(position):
             actual = actual.next_node
@@ -41,7 +41,7 @@ class DoubleLinkedList:
 
     def remove_node_by_position(self, position):
         if position < 0 or position >= self.length:
-            raise IndexError("Posición fuera de rango")
+            raise IndexError("index out of range")
         to_remove = self.find_node_by_position(position)
         prev_n = to_remove.prev_node
         next_n = to_remove.next_node

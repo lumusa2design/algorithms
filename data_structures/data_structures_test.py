@@ -4,12 +4,12 @@ import queue
 
 class TestSortMethods(unittest.TestCase):
     def test_queue(self):
-        cola = queue.Queue()
-        cola.queue.enqueue(1)
-        cola.queue.enqueue(2)
-        cola.queue.enqueue(3)
-        self.assertTrue(cola.queue.dequeue() == 1)
-        print(cola)
+        my_queue = queue.Queue()
+        my_queue.queue.enqueue(1)
+        my_queue.queue.enqueue(2)
+        my_queue.queue.enqueue(3)
+        self.assertTrue(my_queue.queue.dequeue() == 1)
+        print(my_queue)
 
 if __name__ == "__main__":
     unittest.main()
