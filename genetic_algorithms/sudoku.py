@@ -253,10 +253,10 @@ def optimized_genetic_algorithm(puzzle, generations=10000, population_size=200):
                     history.append(best[:])
                     fitness_over_time.append(fitness(best))
                     if fitness(best) == 243:
-                        print("¡Solución exacta encontrada!")
+                        print("Solution Find!")
                         break
                 if fitness(best) == 243:
-                    print("¡Solución exacta encontrada!")
+                    print("Solution Find!")
                     break
 
     return best
