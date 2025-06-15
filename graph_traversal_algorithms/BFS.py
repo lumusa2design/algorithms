@@ -1,5 +1,4 @@
 from data_structures.Queue import Queue
-import networkx as nx
 
 def BFS(graph, first_node):
     visited, viewed, queue = [], set(), Queue()
@@ -28,7 +27,7 @@ def BFS_find_way(graph, first_node, goal):
             if neighbour not in viewed:
                 viewed.add(neighbour)
                 queue.enqueue(neighbour)
-    print(f"Numero de iteraciones: {iter}\n")
+    print(f"Iter Num: {iter}\n")
     return visited
 
 
