@@ -1,5 +1,6 @@
 from data_structures.stack import Stack
 import networkx as nx
+
 def DFS(graph, first_node):
     visited, viewed, stack = [], set(), Stack()
     viewed.add(first_node)
@@ -27,7 +28,7 @@ def DFS_find_way(graph, first_node, goal):
             if neighbour not in viewed:
                 viewed.add(neighbour)
                 stack.insert(neighbour)
-    print(f"Numero de iteraciones: {iter}\n")
+    print(f"Iter Num: {iter}\n")
     return visited
 
 
