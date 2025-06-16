@@ -9,5 +9,3 @@ def greedy(num):
             res.append(coins[i])
             num -= coins[i]
     return res
-
-print(greedy(12.58))

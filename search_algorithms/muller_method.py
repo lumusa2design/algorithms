@@ -10,7 +10,7 @@ def muller_method(func, x0, fail,NiterMax=1000, TOL=1e-9):
             return NiterMax
         diff_fx0 = sp.diff(f_sym, x).subs(x, x0)
         second_diff = sp.diff(f_sym, x, 2).subs(x, x0)
-        z1, z2 = polinomios(second_diff/2, diff_fx0, fx0)
+        z1, z2 = polinomies(second_diff / 2, diff_fx0, fx0)
         if z1 == 0:
             return fail
         x1 = x0 + z1
@@ -23,7 +23,7 @@ def muller_method(func, x0, fail,NiterMax=1000, TOL=1e-9):
 
 
 
-def polinomios(a,b,c):
+def polinomies(a, b, c):
     if a == 0:
         return 0, 0
     dis = b*b - 4*a*c

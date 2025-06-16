@@ -5,4 +5,3 @@ def dec_to_binary(number):
         number = number // 2
     return result or '0'
 
-print(dec_to_binary(0))

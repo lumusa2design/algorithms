@@ -9,4 +9,3 @@ def lucas_number(number):
 
     return b
 
-print(lucas_number(9))

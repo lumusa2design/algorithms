@@ -89,4 +89,4 @@ class NQueensVisualizer:
             f.write("\n")
 
 
-NQueensVisualizer(8)
+

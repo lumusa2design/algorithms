@@ -60,4 +60,3 @@ def print_board(chess):
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-nqueens(8, delay=0.6)

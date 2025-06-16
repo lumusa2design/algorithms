@@ -20,7 +20,3 @@ def regula_falsi(f, a, b, Max_iter, TOL= 1e-9):
 
 def f(x):
     return x**3 - 4*x + 1  # Ejemplo de fun
-
-res =regula_falsi(f,1,3,1000000)
-print(res)
-print(f(res))
