@@ -43,4 +43,4 @@ def print_board(chess):
         print(" ".join("♛" if cell else "·" for cell in row))
     print()
 
-nqueens(11)
+

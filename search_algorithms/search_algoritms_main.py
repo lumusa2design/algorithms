@@ -36,9 +36,3 @@ def view_graphic(f, inicio, fin, method, a, b=None, *args):
     plt.show()
 
 
-# Pruebas con diferentes métodos
-view_graphic(f, -4, 4, bisection_method, 1, 3)
-view_graphic(f, -4, 4, regula_falsi, 1, 3, 100)
-view_graphic(f, -4, 4, newton_raphson, -3, 100)
-view_graphic(f, -4, 4, secant_method, 1,3)
-view_graphic(f, 1, -1,muller_method, 1000, 1e-12)
