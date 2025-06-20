@@ -16,7 +16,7 @@ def dijkstra(graph, first_node, objective):
         if min_node is None:
             break
         if min_node == objective:
-            print(f"Numero de iteraciones : {iteration}")
+            print(f"Iter Num : {iteration}")
             break
 
         visited.add(min_node)
