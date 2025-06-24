@@ -1,17 +1,17 @@
 n_iter = 0
 
-def merge_sort(lista):
+def merge_sort(unsorted_list):
     global n_iter
-    if len(lista) > 1:
+    if len(unsorted_list) > 1:
         n_iter +=1
-        mid = len(lista)//2
-        left = lista[0:mid]
-        right = lista[mid:len(lista)]
+        mid = len(unsorted_list) // 2
+        left = unsorted_list[0:mid]
+        right = unsorted_list[mid:len(unsorted_list)]
         left = merge_sort(left)
         right = merge_sort(right)
         res =merge(left, right)
         return res
-    return lista
+    return unsorted_list
 
 
 def merge(left, right):

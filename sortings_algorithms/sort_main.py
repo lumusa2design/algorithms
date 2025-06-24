@@ -8,45 +8,45 @@ import time
 
 arr_original = [64, 34, 25, 12, 22, 11, 90, 1,50, 23]
 
-print(f"el array original es: {arr_original}")
+print(f"the original list is: {arr_original}")
 #Pruebas del Bubble sort
 inicio = time.perf_counter_ns()
 arr_bubble = bubble_sort.bubble_sort(arr_original.copy())
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo bubble_sort es: {arr_bubble}")
+print(f"Thr result is: {arr_bubble}")
 
 tiempo_algoritmo= fin - inicio
-print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+print(f"Execution Time: {tiempo_algoritmo} ns")
 
 #Prueba Merge sort
 inicio = time.perf_counter_ns()
 arr_merge, n_iter = merge_sort.merge_sort(arr_original.copy()), merge_sort.count_n_iter()
-print(f"el numero de iteraciones de Mergesort fue {n_iter}")
+print(f"The number of iterations of merge sort is: {n_iter}")
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo Mergesort es: {arr_merge}")
+print(f"The result of merge sort is: {arr_merge}")
 
 tiempo_algoritmo= fin - inicio
-print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+print(f"Execution time: {tiempo_algoritmo} ns")
 
 #Pruebas del quick sort
 inicio = time.perf_counter_ns()
 arr_quick = quick_sort.quicksort(arr_original.copy())
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo quick sort es: {arr_quick}")
+print(f"The result after quicksort is: {arr_quick}")
 
 tiempo_algoritmo= fin - inicio
-print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+print(f"Execution time: {tiempo_algoritmo} ns")
 
 #Pruebas staling sort
 inicio = time.perf_counter_ns()
 arr_stalin = stalin_sort.stalin_sort(arr_original.copy())
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo staling sort es: {arr_stalin}")
+print(f"the result of stalin sort was: {arr_stalin}")
 #Pruebas Bogo sort
 inicio = time.perf_counter_ns()
 arr_bogo = bogo_sort.bogo_sort(arr_original.copy())
 fin = time.perf_counter_ns()
-print(f"El array resultante tras el algoritmo Bogosort es: {arr_bogo}")
+print(f"the result of bogo sort was {arr_bogo}")
 
 tiempo_algoritmo= fin - inicio
-print(f"El tiempo de ejecución ha sido: {tiempo_algoritmo} nanosegundos")
+print(f"Execution time: {tiempo_algoritmo} ns")

@@ -24,7 +24,7 @@ def visually_bubble_sort(lista):
         for k, (bar, val) in enumerate(zip(bar_rects, arr)):
             bar.set_height(val)
             bar.set_color(cm.hsv(float(val) / float(max(arr))))
-        text.set_text(f"Comparando: i={i}, j={j}")
+        text.set_text(f"comparing: i={i}, j={j}")
         plt.pause(0.001)
 
     while intercambio:
@@ -37,7 +37,7 @@ def visually_bubble_sort(lista):
                 lista[i], lista[j] = lista[j], lista[i]
                 intercambio = True
 
-    print(f"Iteraciones en Bubble Sort: {n_iter}")
+    print(f"Iterations on Bubble Sort: {n_iter}")
     plt.show()
     return lista
 
@@ -63,7 +63,7 @@ def visually_bogo_sort(lista):
         n_iter+=1
         random.shuffle(lista)
         update_bars_bogo(lista)
-    print(f"iteraciones en Bogosort: {n_iter}")
+    print(f"iterations on Bogosort: {n_iter}")
     plt.show()
 
 
@@ -93,13 +93,13 @@ def visually_counting_sort(lista):
 
     for i in range(len(arr)):
         count[arr[i]] += 1
-        update_bars(arr, f"Contando: valor {arr[i]}")
+        update_bars(arr, f"counting: value {arr[i]}")
 
     index = 0
     for i in range(len(count)):
         while count[i] > 0:
             arr[index] = i
-            update_bars(arr, f"Insertando: {i} en posición {index}")
+            update_bars(arr, f"Insert: {i} in position {index}")
             index += 1
             count[i] -= 1
 
@@ -160,7 +160,7 @@ def visually_merge_sort(lista):
             merge_sort(arr, left, middle)
             merge_sort(arr, middle + 1, right)
             merge(arr, left, middle, right)
-            update_bars(arr, f"Fusionando: {left}-{right}")
+            update_bars(arr, f"merging: {left}-{right}")
 
     def merge(arr, left, middle, right):
         n1 = middle - left + 1
@@ -247,7 +247,7 @@ def visually_selection_sort(arr):
         for k, (bar, val) in enumerate(zip(bar_rects, arr)):
             bar.set_height(val)
             bar.set_color(cm.hsv(float(val) / float(max(arr))))
-        text.set_text(f"Comparando: i={i}, j={j}")
+        text.set_text(f"Comparing: i={i}, j={j}")
         plt.pause(0.001)
 
     for i in range(len(arr)):
@@ -322,7 +322,7 @@ def visually_bogobogosort(arr):
         temp = subarr.copy()
         while not is_order(temp):
             random.shuffle(temp)
-            update_bars(temp, "Bogo ordenando subarray")
+            update_bars(temp, "Bogo sorting subarray")
         return temp
 
     working_list = lista.copy()
@@ -331,15 +331,15 @@ def visually_bogobogosort(arr):
     while not is_order(working_list):
         if counter > 0:
             random.shuffle(working_list)
-            update_bars(working_list, f"Shuffle completo #{counter}")
+            update_bars(working_list, f"Shuffle completed #{counter}")
 
         last = working_list.pop()
-        update_bars(working_list, f"Pop del último: {last}")
+        update_bars(working_list, f"Pop of the last: {last}")
 
         ordered_part = visually_bogo_sort_partial(working_list)
         ordered_part.append(last)
         working_list = ordered_part.copy()
-        update_bars(working_list, f"Añadido de nuevo: {last}")
+        update_bars(working_list, f"added again: {last}")
         counter += 1
 
     plt.show()
