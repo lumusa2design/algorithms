@@ -1,12 +1,12 @@
-def bubble_sort(lista):
+def bubble_sort(unsorted_list):
     n_iter = 0
-    intercambio=True
-    while(intercambio):
+    interchange=True
+    while(interchange):
         n_iter += 1
-        intercambio = False
-        for i in range(len(lista)-1):
-            if lista[i] > lista[i+1] :
-                lista[i], lista[i+1] = lista[i+1], lista[i]
-                intercambio = True
+        interchange = False
+        for i in range(len(unsorted_list)-1):
+            if unsorted_list[i] > unsorted_list[i+1] :
+                unsorted_list[i], unsorted_list[i+1] = unsorted_list[i+1], unsorted_list[i]
+                interchange = True
     print(f"iteraciones en Bubblesort {n_iter}")
-    return lista
+    return unsorted_list

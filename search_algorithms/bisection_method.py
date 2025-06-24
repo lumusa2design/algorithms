@@ -9,6 +9,6 @@ def bisection_method(func, a, b, tol=1e-9):
             minim = c
         if func(c) > 0:
             maxim = c
-        if(func(c) == 0 or abs(func(c)) < tol):
+        if func(c) == 0 or abs(func(c) < tol):
             return c
 
