@@ -4,9 +4,9 @@ def bubble_sort(unsorted_list):
     while(interchange):
         n_iter += 1
         interchange = False
-        for i in range(len(lista)-1):
-            if lista[i] > lista[i+1] :
-                lista[i], lista[i+1] = lista[i+1], lista[i]
+        for i in range(len(unsorted_list)-1):
+            if unsorted_list[i] > unsorted_list[i+1] :
+                unsorted_list[i], unsorted_list[i+1] = unsorted_list[i+1], unsorted_list[i]
                 interchange = True
     print(f"Bubble sort iterations {n_iter}")
-    return lista
+    return unsorted_list
