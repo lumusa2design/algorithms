@@ -1,4 +1,4 @@
-def bubble_sort(lista):
+def bubble_sort(unsorted_list):
     n_iter = 0
     interchange=True
     while(interchange):
