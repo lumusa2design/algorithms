@@ -8,5 +8,5 @@ def bubble_sort(unsorted_list):
             if unsorted_list[i] > unsorted_list[i+1] :
                 unsorted_list[i], unsorted_list[i+1] = unsorted_list[i+1], unsorted_list[i]
                 interchange = True
-    print(f"iteraciones en Bubblesort {n_iter}")
+    print(f"Bubble sort iterations {n_iter}")
     return unsorted_list
