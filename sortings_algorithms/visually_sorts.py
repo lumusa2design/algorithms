@@ -346,13 +346,13 @@ def visually_bogobogosort(arr):
     return working_list
 
 
-arr = list(range(18, 0, -1))
+arr = list(range(50, 0, -1))
 #visually_bubble_sort(arr)
 #visually_bogo_sort(arr)
 #visually_counting_sort(arr)
 #visually_insertion_sort(arr)
 #visually_merge_sort(arr)
-#visually_quick_sort(arr)
+visually_quick_sort(arr)
 #visually_selection_sort(arr)
 #visually_stalin_sort(arr)
-visually_bogobogosort(arr)
+#visually_bogobogosort(arr)

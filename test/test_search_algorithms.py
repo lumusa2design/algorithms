@@ -2,11 +2,13 @@ import unittest
 import sys
 import os
 
-from search_algorithms.binary_conversion import dec_to_binary
+from numerical_algorithms.binary_conversion import dec_to_binary
 from search_algorithms.lineal_search import linear_search
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'search_algorithms'))
-from search_algorithms import binary_search, lineal_search, fibonacci, bisection_method, newton_raphson_method, secant_method, lineal_search
+from search_algorithms import binary_search
+from numerical_algorithms import bisection_method, fibonacci, newton_raphson_method, secant_method
+
 
 class TestSearchAlgorithms(unittest.TestCase):
     def test_linear_and_binary_search(self):
