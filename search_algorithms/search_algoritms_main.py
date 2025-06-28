@@ -1,10 +1,7 @@
-from bisection_method import bisection_method
-from regulafalsi import regula_falsi
-from newton_raphson_method import newton_raphson
-from muller_method import muller_method
+
 import numpy as np
 import matplotlib.pyplot as plt
-from secant_method import secant_method
+
 def f(x):
     return x ** 3 - 4 * x + 1
 
