@@ -1,0 +1,1 @@
+<h1 align="center"> 🔎 Search algorithms </h1>

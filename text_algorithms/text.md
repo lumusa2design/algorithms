@@ -1,0 +1,1 @@
+<h1 align="center">📝 Text Algorithms</h1>
