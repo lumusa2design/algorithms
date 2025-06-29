@@ -24,11 +24,11 @@
 | 👨🏽‍💻 Author                | [Go](#-author)                     |
 
 ---
-## 💻 Types of Algorithms
+# 💻 Types of Algorithms
 
 ---
 
-### 🔃 Sorting Algorithms
+## [🔃 Sorting Algorithms](./sortings_algorithms/sorti.md)
 
 > Algorithms that sort unordered data into a specific order.
 
@@ -38,6 +38,7 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 ![ordered:list.svg](sortings_algorithms/ordered_list.svg)
 
 </div>
+
 ### ✅ Implemented
 
 - [`Bogosort`](./sortings_algorithms/bogo_sort.py)  
@@ -61,7 +62,7 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 ---
 
 
-### 🗃️ Data Structures
+## [🗃️ Data Structures](./data_structures/data_structure.md)
 
 > Fundamental for storing and organizing data efficiently. Essential for traversal and search algorithms.
 
@@ -71,7 +72,7 @@ Different data structures that store large amounts of information in various way
   <img src="./data_structures/binary_tree.svg" width="400px" alt="Binary Tree">
 </p>
 
-**Implemented:**
+### ✅ Implemented:
 - [`Binary Tree`](./data_structures/binary_tree.py)  
 - [`Double Linked List`](./data_structures/double_linked_list.py)  
 - [`Hash Table`](./data_structures/binary_tree.py)  
@@ -82,7 +83,7 @@ Different data structures that store large amounts of information in various way
 - [`Non Directed Graph`](./data_structures/non_directed_graph.py)  
 
 
-**To implement:**
+### 🛠️ To implement:
 
 - [ ] `AVL Tree`
 - [ ] `B Tree`
@@ -91,7 +92,7 @@ Different data structures that store large amounts of information in various way
 
 ---
 
-### 🔍 Search Algorithms
+## [🔍 Search Algorithms](search_algorithms/search.md)
 
 > Locate specific values or solutions within data sets using various strategies.
 
@@ -103,7 +104,8 @@ They can search for a specific number in a list, a node in a structure like a tr
 ![nqueens.gif](search_algorithms/nqueens.gif)
 
 </div>
-**Implemented:**
+
+### ✅Implemented:
 
 - [`Greedy Search Tree`](./search_algorithms/basic_greedy.py)  
 - [`Binary Search`](./search_algorithms/binary_search.py)  
@@ -112,16 +114,16 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Backtracking`](./search_algorithms/n_queens_backtracking.py)  
 
 
-**To implement:**
+### 🛠️ To implement:
 
-- Jump to Search  
-- Exponential Search  
-- Interpolation Search  
-- Fibonacci Search
+- [ ] `Jump to Search`  
+- [ ] `Exponential Search`  
+- [ ] `Interpolation Search`  
+- [ ] `Fibonacci Search`
 
 ---
 
-### 🌐 Graph Traversal Algorithms
+## [🌐 Graph Traversal Algorithms](graph_traversal_algorithms/) 
 
 > Explore vertices and edges of graphs to find paths, detect cycles, or analyze structure.
 
@@ -134,29 +136,35 @@ They help solve problems like pathfinding, cycle detection, connected component 
 
 </div>
 
-**Implemented:**
+### ✅ Implemented:
 
 - [`Breadth-First Search (BFS) `](./graph_traversal_algorithms/BFS.py)  
 - [`Depth-First Search (DFS)  `](./graph_traversal_algorithms/DFS.py)  
 - [`Dijkstra’s Algorithm`](./graph_traversal_algorithms/dijkstra_algorithm.py)  
 
-**To implement:**
-- A* (A Star)  
-- Bellman-Ford  
-- Floyd-Warshall  
-- Johnson's Algorithm  
-- Topological Sort  
-- Tarjan's Algorithm  
-- Kosaraju's Algorithm  
-- Prim's Algorithm  
-- Kruskal's Algorithm  
-- IDA* (Iterative Deepening A*)
+### 🛠️ To implement:
+
+- [ ] `A* (A Star)`
+- [ ] `Bellman-Ford`  
+- [ ] `Floyd-Warshall`  
+- [ ] `Johnson's Algorithm`  
+- [ ] `Topological Sort`  
+- [ ] `Tarjan's Algorithm`  
+- [ ] `Kosaraju's Algorithm`  
+- [ ] `Prim's Algorithm`  
+- [ ] `Kruskal's Algorithm`  
+- [ ] `IDA* (Iterative Deepening A*)`
 
 ---
 
-### 🔢 Numerical Algorithms
+## [🔢 Numerical Algorithms](./numerical_algorithms/numerical.md)
 
-*(Coming soon)*
+>  Algorithms that solve numerical problems like root finding or optimization.
+
+They are algorithms that use mathematical methods to find a result, using different tools such as iteration, interpolation, integration... 
+These algorithms are key to various branches of engineering and mathematics and are widely used in various fields.
+
+
 
 <div align="center">
 
@@ -164,22 +172,111 @@ They help solve problems like pathfinding, cycle detection, connected component 
 
 </div>
 
+### ✅ Implemented:
+
+- [`binary conversion`](./numerical_algorithms/binary_conversion.py)
+- [`bisection method`](./numerical_algorithms/binary_conversion.py)
+- [`count ways`](./numerical_algorithms/count_ways.py)
+- [`erastothenes sieve`](./numerical_algorithms/erastothenes_sieve.py)
+- [`euclides algorithm`](./numerical_algorithms/euclides_algorithm.py)
+- [`factorial of a number`](./numerical_algorithms/factorial.py)
+- [`fibonacci`](./numerical_algorithms/fibonacci.py)
+- [`friendly numbers`](./numerical_algorithms/friendly_numbers.py)
+- [`Lucas number`](./numerical_algorithms/lucas_number.py)
+- [`max number of an array`](./numerical_algorithms/max_number.py)
+- [`min number of an array`](./numerical_algorithms/min_number.py)
+- [`mean of a number`](./numerical_algorithms/mean.py)
+- [`modular exponentation`](./numerical_algorithms/modular_exponentation.py)
+- [`muller method`](./numerical_algorithms/muller_method.py)
+- [`Newton Raphson method`](./numerical_algorithms/newton_raphson_method.py)
+- [`Pow method`](./numerical_algorithms/pow_method.py)
+- [`Regula Falsi Method`](./numerical_algorithms/regulafalsi.py)
+- [`Secant method`](./numerical_algorithms/secant_method.py)
+- [`Taylor Polinomial`](./numerical_algorithms/taylor_polynomial.py)
+- [`Tribonacci`](./numerical_algorithms/tribonacci.py)
+
+### 🛠️ To implement
+
+- [ ] `Cholesky Descomposition`
+- [ ] `Gauss Jordan Elimination`
+- [ ] `QR Descomposition`
+- [ ] `Brent's Method`
+- [ ] `Fixed Point Iteration`
+- [ ] `Lagrange Polynomial Interpolation`
+- [ ] `Spline Interpolation`
+- [ ] `Fourier Series`
+- [ ] `Standart Deviation and Variance`
+- [ ] `Gradient Descent`
+- [ ] `Runge-Kutta Methods`
+- [ ] `Nash Balance`
+- [ ] `K-Means`
+- [ ] `Montecarlo's Algorithm`
 
 ---
 
-### 🧬 Genetic Algorithms
+## [🧬 Genetic Algorithms](./genetic_algorithms/genetic_algorithms.md)
 
+> Heuristic search inspired by natural selection: selection, crossover, mutation.
+
+Algorithms are algorithms that are based on organised steps to arrive at the solution of a specific problem. These algorithms are based on evolving populations of individuals by subjecting them to a series of random actions until a solution is reached. Similar to how evolution works.
 <div align="center">
 
 ![genetic_algorithm.gif](genetic_algorithms/genetic_algorithm.gif)
 
 </div>
 
-*(Coming soon)*
+### ✅ Implemented
+
+- [`Mutation`](./genetic_algorithms/mutation.py)
+- [`One Point Crossover`](./genetic_algorithms/one_point_crossover.py)
+- [`Two Point Crossover`](./genetic_algorithms/two_point_crossover.py)
+- [`Uniform Crossover`](./genetic_algorithms/uniform_crossover.py)
+- [`Sudoku Example`](./genetic_algorithms/sudoku.py)
+
+### 🛠️ To implement
+
+- [ ] `Fitness Proportional Selection (Roulete Wheel)`
+- [ ] `Tournament Selection`
+- [ ] `Elitism`
+- [ ] `Multiobjective Optimization (NSGA-II)`
+- [ ] `Gene Encoding Techniques`
+  - `Binary Genome Representation`
+  - `Real Genome Representation`
+  - `Permutation Genome Representation`
+- [ ] `Dynamic Mutation Rate`
+- [ ] `Real Valued Genetic Algorithm`
+- [ ] `Tree based Genetic Programming`
+
 
 ---
 
-### 📄 Text Algorithms
+## [📄 Text Algorithms](./text_algorithms/text.md)
+
+>Algorithms that manipulate, analyze, and transform sequences of characters.
+
+Text algorithms include techniques for searching and matching patterns in text (like KMP or Rabin-Karp), compressing data (such as Huffman or LZ77), and encoding/decoding strings (e.g., Base64 or Unicode). They are essential in applications like text editors, search engines, file compressors, communication protocols, and natural language processing.
+
+![text_algoritms.gif](text_algorithms/kmp_text.gif)
+
+### ✅ Implemented
+
+- [`Caesar Encoding`](./text_algorithms/cesar_codex.py)
+-  [`Huffman Algorithm`](./text_algorithms/huffman.py)
+- [`vigenere encoding`](./text_algorithms/vigenere_codex.py)
+### 🛠️ To implement
+
+- [ ] ` Knuth-Morris-Pratt (KMP)`
+- [ ] ` Rabin-Karp`
+- [ ] `Boyer-Moore`
+- [ ] ` LZ77 / LZ78 Compression`
+- [ ] ` Run-Length Encoding (RLE)`
+- [ ] ` Base64 Encoding`
+- [ ] ` ASCII / Unicode Conversion`
+- [ ] ` ROT13`
+- [ ] ` Edit Distance (Levenshtein)`
+- [ ] ` Anagram Checker`
+- [ ] ` Trie Construction`
+- [ ] ` Regex-based Pattern Matching`
 
 *(Coming soon)*
 
