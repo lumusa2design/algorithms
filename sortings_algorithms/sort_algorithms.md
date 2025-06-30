@@ -1,4 +1,4 @@
-# Short algorithms (English) 
+<h1 align="center">  🔃 Sorting Algorithms </h1>
 
 A sort algorithm is a set of instructions that arranges a series of elements in (usually ascending) order.
 
@@ -14,11 +14,11 @@ A sort algorithm is a set of instructions that arranges a series of elements in 
 - [✂️ Stalin Sort](#stalin-sort)
 
 
-### BUBBLE SORT
+### [BUBBLE SORT](./bubble_sort.py)
 It is a sorting algorithm in which each element is checked against the next, exchanging its position if it is not in the correct order. It is necessary to go through the vector several times until it is sorted.
 
 #### Algorithm Performance
-To find the performance according to the Big O notation, we can look at the average case, the optimal case and the worst case. First we must to knoe that:
+To find the performance according to the Big O notation, we can look at the average case, the optimal case and the worst case. First we must to know that:
 
 $c(n) =\frac{n^2 - n}{2} $
 
@@ -26,7 +26,7 @@ $c(n) =\frac{n^2 - n}{2} $
 |-------------------|-----------------| ------------|
 | $\Theta(n) = n^2$ | $\Omega(n) = n$ | $O(n) = n^2$|
 
-### COUNTING SORT
+### [COUNTING SORT](./counting_sort.py)
 Non-comparative sorting algorithm. Works by counting the occurrences of each unique value. Best for integers in a limited range.
 
 #### Algorithm Performance
@@ -58,7 +58,7 @@ A divide-and-conquer algorithm that splits the array into halves, sorts each hal
 
 ### SELECTION SORT
 Selects the smallest (or largest) element and places it at the correct position, repeating for all elements.
-#### Algorithm Perfrmance
+#### Algorithm Performance
 | Average Case      | Optimal case      | Worst case  |
 |-------------------|-------------------| ------------|
 | $\Theta(n) = n^2$ | $\Omega(n) = n^2$ | $O(n) = n^2$|
