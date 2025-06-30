@@ -28,7 +28,7 @@
 
 ---
 
-## [🔃 Sorting Algorithms](./sortings_algorithms/sorti.md)
+## [🔃 Sorting Algorithms](./sortings_algorithms/sort_algorithms.md)
 
 > Algorithms that sort unordered data into a specific order.
 
