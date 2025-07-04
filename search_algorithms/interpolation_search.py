@@ -2,8 +2,7 @@ def interpolation(unordered_array, key):
     if len(unordered_array) == 0:
         return -1
 
-    low_value = 0
-    high_value = len(unordered_array) -1
+    low_value, high_value = 0, len(unordered_array) -1
     while low_value <= high_value and unordered_array[low_value] <= key <= unordered_array[high_value]:
         if unordered_array[high_value] == unordered_array[low_value]:
             if unordered_array[low_value] == key:
