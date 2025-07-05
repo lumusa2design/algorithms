@@ -114,10 +114,9 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Backtracking`](./search_algorithms/n_queens_backtracking.py)  
 - [`Jump Search`](./search_algorithms/jump_search.py)
 - [`Exponential Search`](./search_algorithms/exponential_search.py)
-
+- [`Interpolation Search`](./search_algorithms/interpolation_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Interpolation Search`  
 - [ ] `Fibonacci Search`
 
 ---
