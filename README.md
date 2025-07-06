@@ -115,9 +115,10 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Jump Search`](./search_algorithms/jump_search.py)
 - [`Exponential Search`](./search_algorithms/exponential_search.py)
 - [`Interpolation Search`](./search_algorithms/interpolation_search.py)
+- [`Fibonacci Search`](./search_algorithms/fibonacci_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Fibonacci Search`
+<!-- - [ ] `Fibonacci Search`-->
 
 ---
 
