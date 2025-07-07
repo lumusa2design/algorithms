@@ -50,11 +50,10 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Quicksort`](./sortings_algorithms/quick_sort.py)  
 - [`Selectionsort`](./sortings_algorithms/selection_sort.py)  
 - [`Stalinsort`](./sortings_algorithms/stalin_sort.py)
-
+- [`Radix Sort`](./sortings_algorithms/radix_sort.py)
 
 ### 🛠️ To Implement
 
-- [ ] `Radixsort`  
 - [ ] `Heapsort`  
 - [ ] `Bucketsort`  
 - [ ] `Shellsort`
@@ -118,7 +117,6 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Fibonacci Search`](./search_algorithms/fibonacci_search.py)
 ### 🛠️ To implement:
 
-<!-- - [ ] `Fibonacci Search`-->
 
 ---
 
