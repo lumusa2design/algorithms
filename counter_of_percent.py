@@ -13,7 +13,7 @@ def calcular_progreso(readme_file: str = "README.md"):
     sections = re.findall(r"### 🛠️ To implement[\s\S]+?---", content)
     implemented_counts = [len(re.findall(r"- \[`", sec)) for sec in content.split("### 🛠️ To implement")[:-1]]
     todo_counts = [len(re.findall(r"- \[ \]", sec)) for sec in sections]
-    titles = re.findall(r"## \[?🔃|🗃️|🔍|🌐|🔢|🧬|📄\]? ([^\[\n]+)", content)
+    titles = re.findall(r"## \[[^\] ]+ ([^\]]+)\]", content)
 
     print("| Category                | ✅ Done | 🛠️ To Do | 📊 Progress |")
     print("|-------------------------|--------:|----------:|-------------:|")
