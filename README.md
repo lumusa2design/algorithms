@@ -230,10 +230,10 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Uniform Crossover`](./genetic_algorithms/uniform_crossover.py)
 - [`Sudoku Example`](./genetic_algorithms/sudoku.py)
 - [`Fitness Proportional Selection`](./genetic_algorithms/Roulete_wheel.py)
+- [`Tournament Selection`](./genetic_algorithms/tournament_selection.py)
 
 ### 🛠️ To implement
 
-- [ ] `Tournament Selection`
 - [ ] `Elitism`
 - [ ] `Multiobjective Optimization (NSGA-II)`
 - [ ] `Gene Encoding Techniques`
