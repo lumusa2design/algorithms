@@ -231,10 +231,10 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Sudoku Example`](./genetic_algorithms/sudoku.py)
 - [`Fitness Proportional Selection`](./genetic_algorithms/Roulete_wheel.py)
 - [`Tournament Selection`](./genetic_algorithms/tournament_selection.py)
-
+- [`Elitism`](./genetic_algorithms/elitism.py)
+- 
 ### 🛠️ To implement
 
-- [ ] `Elitism`
 - [ ] `Multiobjective Optimization (NSGA-II)`
 - [ ] `Gene Encoding Techniques`
   - `Binary Genome Representation`
