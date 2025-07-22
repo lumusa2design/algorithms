@@ -231,10 +231,11 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Sudoku Example`](./genetic_algorithms/sudoku.py)
 - [`Fitness Proportional Selection`](./genetic_algorithms/Roulete_wheel.py)
 - [`Tournament Selection`](./genetic_algorithms/tournament_selection.py)
+- [`Elitism`](./genetic_algorithms/elitism.py)
+
 
 ### 🛠️ To implement
 
-- [ ] `Elitism`
 - [ ] `Multiobjective Optimization (NSGA-II)`
 - [ ] `Gene Encoding Techniques`
   - `Binary Genome Representation`
@@ -260,10 +261,10 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Caesar Encoding`](./text_algorithms/cesar_codex.py)
 -  [`Huffman Algorithm`](./text_algorithms/huffman.py)
 - [`vigenere encoding`](./text_algorithms/vigenere_codex.py)
+- [`Rabin-Karp`](./text_algorithms/rabin_karp_algorithm.py)
 ### 🛠️ To implement
 
 - [ ] ` Knuth-Morris-Pratt (KMP)`
-- [ ] ` Rabin-Karp`
 - [ ] `Boyer-Moore`
 - [ ] ` LZ77 / LZ78 Compression`
 - [ ] ` Run-Length Encoding (RLE)`
