@@ -5,7 +5,7 @@ from tournament_selection import tournament_selection
 from two_point_crossover import *
 import matplotlib.pyplot as plt
 
-def plot_pareto(population, fitnesses):
+def plot_pareto( fitnesses):
     f1 = [f[0] for f in fitnesses]
     f2 = [f[1] for f in fitnesses]
 
