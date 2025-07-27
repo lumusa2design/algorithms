@@ -232,11 +232,13 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Fitness Proportional Selection`](./genetic_algorithms/Roulete_wheel.py)
 - [`Tournament Selection`](./genetic_algorithms/tournament_selection.py)
 - [`Elitism`](./genetic_algorithms/elitism.py)
+- [`Multiobjective Optimization (NSGA-II)`](./genetic_algorithms/nsgaii.py)
+
 
 
 ### 🛠️ To implement
 
-- [ ] `Multiobjective Optimization (NSGA-II)`
+
 - [ ] `Gene Encoding Techniques`
   - `Binary Genome Representation`
   - `Real Genome Representation`
