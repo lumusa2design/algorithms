@@ -124,7 +124,7 @@ def nsga2(pop_size, generations, gene_length, gene_space, crossover_func, num_el
         population = new_population
 
     fitnesses = [evaluate(ind) for ind in population]
-    plot_pareto(population, fitnesses)
+    plot_pareto( fitnesses)
     return population
 
 

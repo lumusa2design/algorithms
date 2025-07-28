@@ -233,14 +233,15 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Tournament Selection`](./genetic_algorithms/tournament_selection.py)
 - [`Elitism`](./genetic_algorithms/elitism.py)
 - [`Multiobjective Optimization (NSGA-II)`](./genetic_algorithms/nsgaii.py)
+- [`Gene encoding Tecniques`]() 
+  - [`Binary Genome Representation`](./genetic_algorithms/binary_genome_representation_generator.py)
 
 
 
 ### 🛠️ To implement
 
 
-- [ ] `Gene Encoding Techniques`
-  - `Binary Genome Representation`
+- [ ] `Gene Encoding Techniques`  
   - `Real Genome Representation`
   - `Permutation Genome Representation`
 - [ ] `Dynamic Mutation Rate`
