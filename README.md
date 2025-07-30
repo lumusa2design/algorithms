@@ -236,13 +236,12 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 - [`Gene encoding Tecniques`]() 
   - [`Binary Genome Representation`](./genetic_algorithms/binary_genome_representation_generator.py)
   - [`Real Genome Representation`](./genetic_algorithms/Real_Genome_Representation.py)
+  - [`Permutation Genome Representation`](./genetic_algorithms/Permutation_Genome_Representation.py)
 
 
 ### 🛠️ To implement
 
 
-- [ ] `Gene Encoding Techniques`
-  - `Permutation Genome Representation`
 - [ ] `Dynamic Mutation Rate`
 - [ ] `Real Valued Genetic Algorithm`
 - [ ] `Tree based Genetic Programming`
