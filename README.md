@@ -238,12 +238,12 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
   - [`Real Genome Representation`](./genetic_algorithms/Real_Genome_Representation.py)
   - [`Permutation Genome Representation`](./genetic_algorithms/Permutation_Genome_Representation.py)
 
--[`Dynamic Mutation Rate`](./genetic_algorithms/dynamic_mutation_rate.py)
-
+- [`Dynamic Mutation Rate`](./genetic_algorithms/dynamic_mutation_rate.py)
+- [`Real Valued Genetic Algorithm`](./genetic_algorithms/real_valued_genetic_algorithm.py)
+- 
 ### 🛠️ To implement
 
 
-- [ ] `Real Valued Genetic Algorithm`
 - [ ] `Tree based Genetic Programming`
 
 
