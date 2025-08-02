@@ -244,8 +244,6 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 ### 🛠️ To implement
 
 
-- [ ] `Tree based Genetic Programming`
-
 
 ---
 
