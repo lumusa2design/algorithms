@@ -23,7 +23,7 @@ class Heap:
     def _sink(self, index):
         smallest = index
         left = self._left(index)
-        right = self._left(index)
+        right = self._right(index)
 
         if left < len(self) and self.heap[left] < self.heap[smallest]:
             smallest = left
