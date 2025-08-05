@@ -52,11 +52,10 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Stalinsort`](./sortings_algorithms/stalin_sort.py)
 - [`Radix Sort`](./sortings_algorithms/radix_sort.py)
 - [`Heap Sort`](./sortings_algorithms/heapsort.py)
+- [`Bucket Sort`](./sortings_algorithms/bucketsort.py)
+- [`Shell Sort`](./sortings_algorithms/shell_sort.py)
 
 ### 🛠️ To Implement
- 
-- [ ] `Bucketsort`  
-- [ ] `Shellsort`
 
 ---
 
