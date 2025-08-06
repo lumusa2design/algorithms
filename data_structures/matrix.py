@@ -10,5 +10,5 @@ def create_matrix(col, row):
 def fill_matrix(arr):
     for i in range(len(arr)):
         for j in range(len(arr[i])):
-            arr[i][j] = input(f'introduce value for the position {i},{j}: ')
+            arr[i][j] = float(input(f'introduce value for the position {i},{j}: '))
 
