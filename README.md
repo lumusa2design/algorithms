@@ -54,10 +54,10 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Heap Sort`](./sortings_algorithms/heapsort.py)
 - [`Bucket Sort`](./sortings_algorithms/bucketsort.py)
 - [`Shell Sort`](./sortings_algorithms/shell_sort.py)
+- [`Tim Sort`](./sortings_algorithms/tim_sort.py)
+- [`Pancake Sort`](./sortings_algorithms/pancake_sort.py)
 
 ### 🛠️ To Implement
-- [ ] `Tim Sort`
-- [ ] `Pancake Sort`
 - [ ] `Bitonic Sort`
 
 ---
