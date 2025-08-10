@@ -124,9 +124,9 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Exponential Search`](./search_algorithms/exponential_search.py)
 - [`Interpolation Search`](./search_algorithms/interpolation_search.py)
 - [`Fibonacci Search`](./search_algorithms/fibonacci_search.py)
+- [`Ternary Search`](./search_algorithms/ternary_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Ternary Search`
 - [ ] `Beam Search`
 - [ ] `Bidirectional Search`
 
@@ -214,7 +214,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Secant method`](./numerical_algorithms/secant_method.py)
 - [`Taylor Polinomial`](./numerical_algorithms/taylor_polynomial.py)
 - [`Tribonacci`](./numerical_algorithms/tribonacci.py)
-- [`Chlesky Descomposition`](./numerical_algorithms/cholesky_decomposition.py)
+- [`Cholesky Descomposition`](./numerical_algorithms/cholesky_decomposition.py)
 - 
 
 ### 🛠️ To implement
