@@ -2,14 +2,7 @@ from data_structures.heap import Heap
 import math
 
 def A_star(graph, first_node, goal_node, heuristic):
-    visited, viewed = [], set()
-    open_set = Heap()
-    came_from = {}
-    g_score = {first_node: 0}
-    cost_function = getattr(graph, "cost", lambda u, v: 1)
-
-    counter = 0
-    iters = 0
+    visited, viewed, open_set, came_from, g_score, cost_function, counter, iters = [], set(), Heap(), {}, {first_node: 0}, getattr(graph, "cost", lambda u, v: 1), 0, 0
     open_set.insert((heuristic(first_node, goal_node), counter, first_node))
     viewed.add(first_node)
 
@@ -23,7 +16,6 @@ def A_star(graph, first_node, goal_node, heuristic):
         iters += 1
 
         if actual_node == goal_node:
-            # reconstruir camino
             path = [goal_node]
             while path[-1] != first_node:
                 path.append(came_from[path[-1]])
@@ -42,7 +34,6 @@ def A_star(graph, first_node, goal_node, heuristic):
                 open_set.insert((f_score, counter, neighbour))
                 viewed.add(neighbour)
 
-    # <-- ¡OJO! El return de fallo va FUERA del while
     print(f"Iter Num: {iters}\n")
     return [], visited, math.inf
 
