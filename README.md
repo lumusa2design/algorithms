@@ -82,13 +82,12 @@ Different data structures that store large amounts of information in various way
 - [`Queue`](./data_structures/Queue.py)  
 - [`Stack`](./data_structures/stack.py)  
 - [`Non Directed Graph`](./data_structures/non_directed_graph.py)  
-
+- [`AVL Tree`](./data_structures/avl_tree.py)
+- [`Heap`](./data_structures/heap.py)
 
 ### 🛠️ To implement:
 
-- [ ] `AVL Tree`
 - [ ] `B Tree`
-- [ ] `Heap`  
 - [ ] `Disjoint Set (Union Find)`
 - [ ] `Trie`
 - [ ] `Segment Tree`
