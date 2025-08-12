@@ -153,10 +153,9 @@ They help solve problems like pathfinding, cycle detection, connected component 
 - [`Breadth-First Search (BFS) `](./graph_traversal_algorithms/BFS.py)  
 - [`Depth-First Search (DFS)  `](./graph_traversal_algorithms/DFS.py)  
 - [`Dijkstra’s Algorithm`](./graph_traversal_algorithms/dijkstra_algorithm.py)  
-
+- [`A* (A Star)`](./graph_traversal_algorithms/Astar.py)
 ### 🛠️ To implement:
 
-- [ ] `A* (A Star)`
 - [ ] `Bellman-Ford`  
 - [ ] `Floyd-Warshall`  
 - [ ] `Johnson's Algorithm`  
