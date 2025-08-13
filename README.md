@@ -213,7 +213,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Taylor Polinomial`](./numerical_algorithms/taylor_polynomial.py)
 - [`Tribonacci`](./numerical_algorithms/tribonacci.py)
 - [`Cholesky Descomposition`](./numerical_algorithms/cholesky_decomposition.py)
-- 
+- [`Gauss Jordan Elimination`](./numerical_algorithms/gauss_jordan_elimination.py)
 
 ### 🛠️ To implement
 
