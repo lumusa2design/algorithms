@@ -270,11 +270,11 @@ Algorithms are algorithms that are based on organised steps to arrive at the sol
 
 - [`Dynamic Mutation Rate`](./genetic_algorithms/dynamic_mutation_rate.py)
 - [`Real Valued Genetic Algorithm`](./genetic_algorithms/real_valued_genetic_algorithm.py)
-- 
+- [`Simulated Annealing`](./genetic_algorithms/simulated_annealing.py)
+
 ### 🛠️ To implement
 
 - [ ] `Hybrid GA + Local Search (Memetic Algorithm)`
-- [ ] `Simulated Annealing`
 - [ ] `Differential Evolution`
 
 🔙 [Go to Table of Contents](#-table-of-contents)
