@@ -170,6 +170,103 @@ basic rotation:
         return new_root
 
 ```
+**Rebalance**
+```python
+    def rebalance(self, node):
+        self.update_height(node)
+        balance_factor = self.get_balance_factor(node)
+        if balance_factor > 1 and self.get_balance_factor(node.left) >= 0:
+            return self.rotate_right(node)
+        if balance_factor > 1 and self.get_balance_factor(node.left) < 0:
+            node.left = self.rotate_left(node.left)
+            node.left.parent = node
+            return self.rotate_right(node)
+        if balance_factor < -1 and self.get_balance_factor(node.right) <= 0:
+            return self.rotate_left(node)
+        if balance_factor < -1 and self.get_balance_factor(node.right) > 0:
+            node.right = self.rotate_right(node.right)
+            node.right.parent = node
+            return self.rotate_left(node)
+        return node
+```
+
+
+
+Here we can see the four types of rotation of an AVL-Tree:
+
+- **LL**: Right Rotation
+- **RR**: Left Rotation
+- **LR**: Left Rotation + Right Rotation
+- **RL**: Right Rotation + Left Rotation
+
+
+**Insert a Node**
+```python
+    def insert(self, value):
+        if self.root is None:
+            self.root = AVL_Node(value)
+            self.size = 1
+            return
+
+        def _insert(current_node, value):
+            if current_node is None:
+                self.size += 1
+                return AVL_Node(value)
+
+            if value < current_node.value:
+                new_child = _insert(current_node.left, value)
+                if current_node.left is not new_child:
+                    current_node.left = new_child
+                    new_child.parent = current_node
+            elif value > current_node.value:
+                new_child = _insert(current_node.right, value)
+                if current_node.right is not new_child:
+                    current_node.right = new_child
+                    new_child.parent = current_node
+            else:
+                return current_node
+
+            return self.rebalance(current_node)
+
+        self.root = _insert(self.root, value)
+        self.root.parent = None
+```
+
+Inserts a Node like a Binary Search Tree but, then uses the balance function  recursively to get a balanced tree
+
+
+**Basic User's Operations**
+
+- Search:
+```python
+    def search(self, value):
+        current_node = self.root
+        while current_node:
+            if value == current_node.value:
+                return current_node
+            elif value < current_node.value:
+                current_node = current_node.left
+            else:
+                current_node = current_node.right
+        return None
+```
+Search a specific node in the tree
+
+- In order tree traversal:
+```python
+    def inorder_traversal(self):
+        result = []
+        def _inorder(node):
+            if not node:
+                return
+            _inorder(node.left)
+            result.append(node.value)
+            _inorder(node.right)
+        _inorder(self.root)
+        return result
+
+```
+
 
 
 
