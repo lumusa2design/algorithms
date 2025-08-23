@@ -46,7 +46,7 @@ Data structures can be broadly classified into two categories:
 
 ## Explanation of the data structures
 
-### 🌲 AVL TREE
+### 🌲 [AVL TREE](./avl_tree.py)
 
 > *Is a Self-Balanced Binary Search Tree*
 
@@ -312,4 +312,91 @@ graph TD
     C --> G[20]
     
 ```
+
+### 👨🏼‍💻 Code Review
+
+**Basic Node with pointers to parens and childs**
+
+```python
+class Node:
+    def __init__(self, value):
+        self.father = None
+        self.left_son = None
+        self.right_son = None
+        self.value = value
+```
+
+First define the node of a tree with:
+
+- ***self.value***: stored data.
+- ***self.father*** : node's father reference.
+- ***left_son, right_son*** : references to the left and right children.
+
+Having the pointer to the parent makes it easier to perform operations such as deleting, rotating, or moving up the tree without having to retrace the path from the root.
+
+**Tree initialize**
+
+```python
+class BinaryTree:
+    def __init__(self, first_value=None):
+        if first_value is None:
+            self.root = None
+            self.length = 0
+        else:
+            self.root = Node(first_value)
+            self.length = 1
+```
+
+Allows you to create the tree empty or with an initial value.
+
+- If there is a `first_value`, create the `root` node and set `length` to 1
+- else, leave the `root` as None and `length` is 0
+
+This provides a quick way to create a tree with an initial element without having to call add_node afterwards.
+
+**Level Order insertion**
+
+```python
+    def add_node(self, value):
+        new_node = Node(value)
+        if not self.root:
+            self.root = new_node
+            self.length += 1
+            return
+
+        q = Queue.Queue()
+        q.enqueue(self.root)
+
+        while not q.is_empty():
+            current = q.dequeue()
+
+            if not current.left_son:
+                current.left_son = new_node
+                new_node.father = current
+                self.length += 1
+                return
+            else:
+                q.enqueue(current.left_son)
+
+            if not current.right_son:
+                current.right_son = new_node
+                new_node.father = current
+                self.length += 1
+                return
+            else:
+                q.enqueue(current.right_son)
+
+```
+
+
+1- If the tree is empty, the new node becomes the root.
+2- If not, use a queue to perform a BFS:
+  - Extract `current`.
+  - If `current.left_son` is free, insert there and finish.
+  - If not, queue left child
+  - If `current.right_son is free`, insert there and finish
+  - If not, queue the right child.
+3- Increment length when inserting.
+
+
 *(coming soon)*
