@@ -390,13 +390,71 @@ This provides a quick way to create a tree with an initial element without havin
 
 
 1- If the tree is empty, the new node becomes the root.
+
 2- If not, use a queue to perform a BFS:
   - Extract `current`.
   - If `current.left_son` is free, insert there and finish.
   - If not, queue left child
   - If `current.right_son is free`, insert there and finish
   - If not, queue the right child.
+
 3- Increment length when inserting.
+
+```mermaid
+flowchart TD
+    A[Start add_node] --> B{Root exists?}
+    B -- No --> C[Set root = new_node; length++]
+    B -- Yes --> D[Enqueue root]
+    D --> E{Queue empty?}
+    E -- No --> F[Dequeue current]
+    F --> G{current.left_son is None?}
+    G -- Yes --> H[Attach as left_son; set father; length++; return]
+    G -- No --> I[Enqueue current.left_son]
+    I --> J{current.right_son is None?}
+    J -- Yes --> K[Attach as right_son; set father; length++; return]
+    J -- No --> L[Enqueue current.right_son]
+    L --> E
+```
+
+### use example
+
+```python
+binary_tree = BinaryTree()
+
+for node in [10,20,30,40,50]:
+    binary_tree.add_node(node)
+```
+
+
+---
+### ⛓ Double linked List
+> Is a linear data structure consisting of nodes, where each node has references to both its previous and next node.
+
+A **Double Linked List (DLL)** is an extension of a **Linked List**, where each node contains two pointers: one to the **previous node** and one to the **next node**.
+
+This Bidirectional nature makes insertions and deletions more flexible compared to a singly linked list.
+
+---
+### ✅ Key Properties
+
+
+- each node has:
+  -  `value`: the stored data
+  - `prev_node`: pointer to the previous node.
+  - `next_node`: pointer to the next node.
+- The list has pointers to the **first** to the **last** node.
+- Can be traversed in **both directions**
+- Easier to remove a node when you already have a pointer to it
+
+---
+
+### 🔧 Core Operations
+- **Insertions**: New elements are usually added at the end (*O(1)*).
+- **Search by position**: Traverses nodes until reaching the index (*O(n)*).
+- **Deletion by position**: Re-links neighbors and updates head/tail if necessary (*O(n)*).
+- **Traversal**:Forward or backward (*O(n)*).
+
+### ⏱ Time Complexity
 
 
 *(coming soon)*
