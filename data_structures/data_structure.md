@@ -455,6 +455,166 @@ This Bidirectional nature makes insertions and deletions more flexible compared 
 - **Traversal**:Forward or backward (*O(n)*).
 
 ### ⏱ Time Complexity
+| Operation              |  Average  |  Worst Case  |
+|------------------------|:---------:|:------------:|
+| Search                 |  *O(n)*   |    *O(n)*    |
+| Insertion(end)         |  *O(1)*   |    *O(1)*    |
+| Deletion (by position) |  *O(n)*   |    *O(n)*    |
+| Traversal              |  *O(n)*   |    *O(n)*    |
+
+```mermaid
+flowchart LR
+    A[Head: 10] <--> B[20] <--> C[30] <--> D[40: Tail]
+```
+### 👨🏼‍💻 Code Review:
+**Double Pointer Node:**
+
+```python
+class Node:
+    def __init__(self, value, position):
+        self.prev_node = None
+        self.next_node = None
+        self.value = value
+        self.position = position
+
+    def __str__(self):
+        return f'{self.value}'
+```
+
+Elements of this node:
+- `prev_node`: pointer to the previous node.
+- `next_node`: pointer to the next node.
+- `value`: stored data.
+- `position`: assigned index at the insertion time.
+- `__str__*`: prints the value of the node.
+
+**List initialize:**
+```python
+class DoubleLinkedList:
+    def __init__(self, first_node=None):
+        if first_node is None:
+            self.first_node = None
+            self.last_node = None
+            self.length = 0
+        else:
+            self.first_node = Node(first_node, 0)
+            self.last_node = self.first_node
+            self.length = 1
+```
+
+- If not initial valued is recieved → initialise as an empty list
+- else: `first_node` is received → initialise with a single node(`first node` and `last node` point the same node).
+
+**add nodes to the end:**
+
+```python
+    def add_node(self, new_node):
+        if self.first_node is None:
+            self.first_node = Node(new_node, 0)
+            self.last_node = self.first_node
+            self.length = 1
+            return
+        node = Node(new_node, self.length)
+        self.last_node.next_node = node
+        node.prev_node = self.last_node
+        self.last_node = node
+        self.length += 1
+```
+
+- if the list is empty, create the first node
+- else, create a new node and link to the end
+  - `last_node.next_node` points to the new node.
+  - the new node points back (`prev_node` = `last_node`)
+  - update `last_node` and increase `length`
+
+this makes always get a Polynomial time of *O(1)*.
+
+**Search by postion**
+```python
+    def find_node_by_position(self, position):
+        if position < 0 or position >= self.length:
+            raise IndexError("index out of range")
+        actual = self.first_node
+        for _ in range(position):
+            actual = actual.next_node
+        return actual
+```
+
+1. Search the index
+2. Go through the list from the top down.
+
+Complexity of *O(n)* in the worst case
+
+**Delete by position**
+
+```python
+    def remove_node_by_position(self, position):
+        if position < 0 or position >= self.length:
+            raise IndexError("index out of range")
+        to_remove = self.find_node_by_position(position)
+        prev_n = to_remove.prev_node
+        next_n = to_remove.next_node
+
+        if prev_n:
+            prev_n.next_node = next_n
+        else:
+            self.first_node = next_n
+
+        if next_n:
+            next_n.prev_node = prev_n
+        else:
+            self.last_node = prev_n
+
+        self.length -= 1
+        return to_remove.value
+```
+
+1. Find the node to delete
+2. Reconnect the pointers of the `prev_node` or `last_node`
+3. if is the first one or the last one, update `first_node` or `last_node`.
+4. Decrease `length`.
+
+**auxiliar methods**
+
+***length***
+
+```python
+def __len__(self):
+    return self.length
+```
+
+returns the length of the linked list
+
+***str***
+```python
+    def __str__(self):
+        if self.length == 0 or self.first_node is None:
+            return "List is empty"
+        valores = []
+        actual = self.first_node
+        while actual:
+            valores.append(str(actual.value))
+            actual = actual.next_node
+        return " <-> ".join(valores)
+```
+
+Returns a visual representation of the list, linked by arrows.
+
+### Use example
+
+```python
+double_linked_list = DoubleLinkedList()
+double_linked_list.add_node(10)
+double_linked_list.add_node(20)
+double_linked_list.add_node(30)
+
+print(double_linked_list) 
+double_linked_list.remove_node_by_position(1)
+print(double_linked_list)  
+print(len(double_linked_list))  
+
+```
 
 
+ 
 *(coming soon)*
