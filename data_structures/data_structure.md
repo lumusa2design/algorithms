@@ -46,7 +46,7 @@ Data structures can be broadly classified into two categories:
 
 ## Explanation of the data structures
 
-### 🌲 [AVL TREE](./avl_tree.py)
+## 🌲 [AVL TREE](./avl_tree.py)
 
 > *Is a Self-Balanced Binary Search Tree*
 
@@ -615,6 +615,163 @@ print(len(double_linked_list))
 
 ```
 
+## ⛓ Simple linked list
 
+> A Linked List is a linear data structure made of nodes, where each node stores a value and a reference to the next node.
+
+A **linked list** stores elements in nodes connected by references. Unlike an array, it does not require contiguous memory and allows efficient insertions/deletions without moving many elements.
+
+### ✅ Key Properties
+
+- Each *node* stores:
+  -  `value`: the data.
+  - `next`: pointer to the next node.
+- Only one direction traversal (from head to tail).
+- No fixed capacity (grows dynamically).
+- Access by index is sequential.
+
+### 🔧 Common Operations
+
+- **add_node(value):** append at the end.
+- **find_node_by_position:** access node by index.
+- **remove_node_by_position:** remove node at index.
+- **insert_by_position:** insert an element at index.
+- **len:** returns the current size.
+- **print:** retrn a string of the values.
+
+### ⏱ Time Complexity
+
+| Operation             | Average | Worst Case |
+|-----------------------|:-------:|:----------:|
+| Access by index       | *O(n)*  |   *O(n)*   |
+| Search by value       | *O(n)*  |   *O(n)*   |
+| Insertion at end      | *O(1)*  |   *O(1)*   |
+| Insertion at position | *O(n)*  |   *O(n)*   |
+| Deletion at position  | *O(n)*  |   *O(N)*   |
+
+```mermaid
+flowchart LR
+    A[Head] --> N1["10 | next ➜"]
+    N1 --> N2["20 | next ➜"]
+    N2 --> N3["30 | next ➜ None"]
+    N3 --> T[Tail]
+```
+
+### 👨🏼‍💻 Code Visualization
+
+**Node**
+
+```python
+class Node:
+    def __init__(self, value, position=0):
+        self.value = value
+        self.next_node = None
+        self.position = position
+
+    def __str__(self):
+        return f'{self.value}'
+```
+
+- Holds `value`, a pointer `next_node`, and its `position`.
+- `position` is maintained by the list for convenience but requieres reordering after modifications.
+
+
+**Initialization**
+
+```python
+class Simple_Linked_List:
+    def __init__(self, first_node):
+        self.first_node = Node(first_node)
+        self.len = 1
+        self.last_node = self.first_node
+```
+
+- Creates a new node and attaches it to the **end** of the list.
+- Updates `last_nodes` for *O(1)* append time
+
+**Find by Position**
+
+```python
+def find_node_by_position(self, position):
+    if position < 0 or position > self.len:
+        pass
+    actual = self.first_node
+    for i in range(position):
+        actual = actual.next_node
+    return actual
+```
+
+- Traverses from the head until reaching the target index.
+
+**Remove node by position**
+```python
+def remove_node_by_position(self, position):
+    self.len -= 1
+    if position == 0:
+        if self.first_node == self.last_node:
+            self.last_node = None
+            self.first_node = None
+        else:
+            self.first_node = self.first_node.next_node
+    else:
+        actual = self.first_node
+        for i in range(position -1):
+            actual = actual.next_node
+        next_node = actual.next_node
+        actual.next_node = next_node.next_node
+
+        self.reorder()
+```
+
+Remove a node by position.
+
+
+**Reorder**
+
+```python
+def reorder(self):
+    position = 0
+    actual = self.first_node
+    while actual is not None:
+        actual.position = position
+        actual = actual.next_node
+        position += 1
+    self.last_node = self.find_node_by_position(self.len - 1) if self.len > 0 else None
+```
+
+- Renumbers positions after insertions/deletions.
+- Updates `last_nodes` to remain consistent.
+
+**Insert by Position (not finished)**
+```python
+def insert_by_position(self, position, value):
+    if position > self.len:
+        return "is not so big"
+    for i in range(position -1):
+        print(i)
+
+```
  
+**Utilities**
+```python
+def __str__(self):
+    actual = self.first_node
+    list_str = ""
+    while actual is not None:
+        list_str += str(actual) + ", "
+        actual = actual.next_node
+    return list_str.strip(", ")
+
+```
+
+**String** representation, prints the values separated by commas.
+
+```python
+def __len__(self):
+    return self.len
+
+```
+
+Allow know length of the list directly.
+
 *(coming soon)*
