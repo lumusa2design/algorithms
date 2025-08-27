@@ -774,4 +774,157 @@ def __len__(self):
 
 Allow know length of the list directly.
 
+## 🗻 Heap
+
+first,  in my repo I have implemented the data structure "min-heap" because is the most used in the programming industry.
+
+> A Min-Heap is a complete binary tree where each node is less than or equal to its children. The minimum element is always at the root.
+
+A **Min-Heap** stores elements in an array while conceptually representing a complete binary tree. It supports fast retrieval/removal of the minimum and efficient insertions thanks to bubble-up and sink operations that maintain the heap property.
+
+### ✅ Key Properties
+
+- `parent` ≤ `children` 
+- **Complete binary tree:** compact, filled level by level from left to right.
+- **Array Representation:**
+  - `parent(i)` = (i - 1)//2
+  - `left(i)` = 2*i + 1
+  - `right(i)` = 2*i + 2
+
+### 🔧 Core Operations
+
+- **insert(x):** append to array, then **bubble up** to restore order.
+- **extract:** remove root (min), move last to root, then **sink down**.
+- **peek:** return current minimum without removal.
+
+### ⏱ Time Complexity
+
+| Operation                   |  Average   |    Worst    |
+|-----------------------------|:----------:|:-----------:|
+| **peek**                    |   *O(1)*   |   *O(1)*    |
+| **insert**                  | *O(log n)* | *O (log n)* |
+| **extract**                 | *O(log n)* | *O(log n)*  |
+| **build-heap from n items** |   *O(n)*   |   *O(n)*    |
+
+
+
+```mermaid
+flowchart TB
+    A["heap[0]=1"] --> B["heap[1]=3"]
+    A --> C["heap[2]=5"]
+    B --> D["heap[3]=7"]
+    B --> E["heap[4]=9"]
+    C --> F["heap[5]=8"]
+    C --> G["heap[6]=10"]
+
+```
+
+### 👨🏼‍💻 Code review
+
+**Structure and auxiliar helpers**
+
+```python
+class Heap:
+    def __init__(self):
+        self.heap = []
+
+    @staticmethod
+    def _father(value): return (value - 1)//2
+    @staticmethod
+    def _left(value):   return 2 * value + 1
+    @staticmethod
+    def _right(value):  return 2 * value + 2
+
+    def __len__(self):
+        return len(self.heap)
+
+```
+
+
+- Uses a **list** to store the three in level order.
+- Index math encodes parent/children relationships
+- `__len__` lets you call `len(heap)`
+
+**Bubble up**
+
+```python
+def _float_function(self, value):
+    while value > 0 and self.heap[value] < self.heap[self._father(value)]:
+        self.heap[value], self.heap[self._father(value)] = \
+            self.heap[self._father(value)], self.heap[value]
+        value = self._father(value)
+```
+
+- Restores min-heap after **inserting**: while the new item is **smaller than its parent**, swap upward.
+- This is typically called **swim/bubble_up**
+
+**sink down**
+```python
+def _sink(self, index):
+    smallest = index
+    left = self._left(index)
+    right = self._right(index)
+
+    if left < len(self) and self.heap[left] < self.heap[smallest]:
+        smallest = left
+    if right < len(self) and self.heap[right] < self.heap[smallest]:
+        smallest = right
+    if smallest != index:
+        self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
+        self._sink(smallest)
+```
+
+- After removing the root, move last element to root, then **sink** while any child is smaller.
+
+**Insert**
+
+```python
+def insert(self, value):
+    self.heap.append(value)
+    self._float_function(len(self)-1)
+```
+
+- Append to end and **bubble up** to maintain the heap property.
+
+**Extract min**
+
+```python
+def extract(self):
+    if not self:
+        return None
+
+    if len(self) == 1:
+        return self.heap.pop()
+
+    root = self.heap[0]
+    self.heap[0] = self.heap.pop()
+    self._sink(0)
+    return root
+```
+- Handles empty heap (None) and single-element fast path.
+
+**peek**
+
+```python
+def peek(self):
+    return self.heap[0] if self else None
+```
+
+- Returns current minimum without modifying the heap.
+
+
+## use example:
+
+```python
+heap = Heap()
+for value in [5, 3, 8, 1, 9, 2]:
+    heap.insert(value)
+
+print(heap.peek())  
+print(heap.extract())
+print(heap.extract()) 
+print(list(iter(heap.heap))) 
+
+```
+
 *(coming soon)*
