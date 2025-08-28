@@ -270,7 +270,7 @@ Search a specific node in the tree
 
 
 
-### 🌲 Binary Tree
+## [🌲 Binary Tree](./binary_tree.py)
 
 > *Is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child.*
 
@@ -280,7 +280,7 @@ It organizes data in a hierarchical structure where each node can have:
 - A **right child**  
 - Or no children (leaf node)
 ---
-#### ✅ Key Properties:
+### ✅ Key Properties:
 - The maximum number of children per node is **2**.  
 - The depth of a binary tree with `n` nodes can vary between `log₂(n)` (best case, balanced) and `n` (worst case, skewed).  
 - Traversals are commonly performed in different orders:  
@@ -293,7 +293,7 @@ It organizes data in a hierarchical structure where each node can have:
 
 ---
 
-#### ⏱️ Time Complexity (general case):
+### ⏱️ Time Complexity (general case):
 - Search: **O(n)** (O(log n) if balanced)  
 - Insertion: **O(n)** (O(log n) if balanced)  
 - Deletion: **O(n)** (O(log n) if balanced)  
@@ -427,7 +427,7 @@ for node in [10,20,30,40,50]:
 
 
 ---
-### ⛓ Double linked List
+## ⛓ [Double linked List](./double_linked_list.py)
 > Is a linear data structure consisting of nodes, where each node has references to both its previous and next node.
 
 A **Double Linked List (DLL)** is an extension of a **Linked List**, where each node contains two pointers: one to the **previous node** and one to the **next node**.
@@ -615,7 +615,7 @@ print(len(double_linked_list))
 
 ```
 
-## ⛓ Simple linked list
+## ⛓ [Simple linked list](./linked_list.py)
 
 > A Linked List is a linear data structure made of nodes, where each node stores a value and a reference to the next node.
 
@@ -774,7 +774,7 @@ def __len__(self):
 
 Allow know length of the list directly.
 
-## 🗻 Heap
+## 🗻 [Heap](./heap.py)
 
 first,  in my repo I have implemented the data structure "min-heap" because is the most used in the programming industry.
 
