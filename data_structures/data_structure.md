@@ -913,7 +913,7 @@ def peek(self):
 - Returns current minimum without modifying the heap.
 
 
-## use example:
+### use example:
 
 ```python
 heap = Heap()
@@ -926,5 +926,87 @@ print(heap.extract())
 print(list(iter(heap.heap))) 
 
 ```
+
+## 🧮 Matrix
+
+> A matrix is a 2D collection of values arranged in rows and columns.
+
+A matrix represents tabular data or coefficients for linear algebra. In Python, a matrix is commonly modeled as a list of lists, where `matrix[r][c]` accesses the element at row r, column c.
+
+### ✅ Key Properties
+
+- Rectangular 2D structure: `rows x cols`
+- Indexing is tipically **row-major** outer-list = rows, inner_list = columns.
+- Can store any type (numbers, strings, objects), but most matrix ops assume numeric values.
+
+### 🔧 Commons Operations
+- **Creation**: zero-filled or with a constant.
+- **Access/Update**:get(r,c), set(r,c,val). (@TODO)
+- **Traversal**: nested loops over rows and columns.(@TODO)
+- **Row/Column operations**: get/replace a row or column. (@TODO)
+- **Transforms**: transpose, add, multiply (by scalar or another matrix), etc.(@TODO)
+
+### ⏱ Time Complexity
+| Opetation              |       Time       |
+|------------------------|:----------------:|
+| Create zero matrix     | *O(rows * cols)* |
+| Get / Set single value |      *O(1)*      |
+| Row/column traversal   | O(rows)/O(cols)  |
+| Full traversal         | *O(rows * cols)* |
+
+### 👨🏼‍💻 Code Review
+
+**Create matrix**
+
+Create a 2D list (matrix) with `col` rows and `row` columns,initially filled with zeros, then filled by user input.
+
+```python
+def create_matrix(col, row):
+    arr = []
+    for i in range(col):
+        arr.append([])
+        for j in range(row):
+            arr[i].append(0)
+    print(arr)
+    fill_matrix(arr)
+    return arr
+```
+
+**fill matrix**
+
+ Fill an existing 2D list with values from user input. 
+ For each position (i, j), prompts the user to enter a value, converts it to float, and assigns it into the matrix.
+
+```python
+def fill_matrix(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            arr[i][j] = float(input(f'introduce value for the position {i},{j}: '))
+```
+
+### 📍 Use example
+
+```python
+# Example: create a 2x3 matrix
+M = create_matrix(2, 3)
+# introduce value for the position 0,0: 1
+# introduce value for the position 0,1: 2
+# introduce value for the position 0,2: 3
+# introduce value for the position 1,0: 4
+# introduce value for the position 1,1: 5
+# introduce value for the position 1,2: 6
+
+print(M)
+
+```
+
+
+$$
+\begin{bmatrix}
+1.0 & 2.0 & 3.0 \\
+4.0 & 5.0 & 6.0
+\end{bmatrix}
+$$
+
 
 *(coming soon)*
