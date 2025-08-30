@@ -1008,5 +1008,46 @@ $$
 \end{bmatrix}
 $$
 
+## 🌱 [NODE](./node.py)
+> A `Node`is the fudamental building block of a tree data structure.
+
+### ✅ Key Properties
+
+- `value`: stores the data in the node.
+- `left`: reference to the left child node.
+- `right`: reference to the right child node
+
+In this case, we will not look at key functions or computational complexity.
+
+
+### 👨🏼‍💻 Code review
+
+```python
+class Node:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+```
+
+- `self.value`: the data stored in the node
+- `self.left`: left child (or None)
+- `self.right`: right child (or None)
+
+### 📍 Use example
+
+```python
+root = Node(10)
+root.left = Node(5)
+root.right = Node(15)
+
+```
+
+```mermaid
+graph TD
+    A[10] --> B[5]
+    A --> C[15]
+
+```
 
 *(coming soon)*
