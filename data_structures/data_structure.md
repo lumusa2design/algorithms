@@ -1047,6 +1047,98 @@ root.right = Node(15)
 graph TD
     A[10] --> B[5]
     A --> C[15]
+```
+
+## 🌐 [Non directed Graph](./non_directed_graph.py)
+
+> An undirected graph is a set of nodes connected by edges where each edge has no orientation (i.e., the relation is bidirectional).
+
+This means if there is an edge between `u` and `v`, you can traverse from `u → v` and from `v → u` equally.
+
+### ✅ Key properties
+
+- **Vertices (nodes)**: numbered from `1` to `n`.
+- **Edges**: pairs of the nodes (unweighted or weighted).
+- No distinction between `u, v` and `v, u`.
+
+### ⏱ Time Complexity
+
+| Operation       | Average  |
+|-----------------|:--------:|
+| Add node        |  *O(1)*  |
+| Add edge        |  *O(1)*  |
+| Check edge(u,v) |  *O(1)*  |
+| Traverse Graph  | *O(V+E)* |
+
+### 👨🏼‍💻 Code Review
+
+**Build Graph**
+
+```python
+import networkx as nx
+def build_graph():
+    num_nodes, num_edges = map(int, input().split())
+    graph = nx.Graph()
+    for i in range(1, num_nodes+1):
+        graph.add_node(i)
+    for i in range(num_edges):
+        graph.add_edge(*map(int, input().split()))
+    return graph
+```
+Build an undirected, unweighted graph.
+
+**Build graph with weight**
+
+```python
+def build_graph_with_weights():
+    num_nodes, num_edges = map(int, input("Number of nodes and edgess: ").split())
+    graph = nx.Graph()
+    for i in range(1, num_nodes + 1):
+        graph.add_node(i)
+    print("Introduce the edges with weight(format: node1 node2 weight):")
+    for _ in range(num_edges):
+        u, v, w = input().split()
+        graph.add_edge(int(u), int(v), weight=float(w))  # float(w) por si el peso no es entero
+    return graph
+```
+
+Build an undirected, weighted graph.
+
+
+### 📍 Use example
+**graph unweight**
+```python
+g = build_graph()
+print("Nodes:", g.nodes())
+print("Edges:", g.edges())
+```
+
+```mermaid
+graph LR
+    1 --- 2
+    1 --- 3
+    1 --- 4
+    4 --- 2
+    2 --- 3
+    3 --- 4
+```
+
+
+``` python
+gw = build_graph_with_weights()
+print("Nodes:", gw.nodes(data=True))
+print("Edges:", gw.edges(data=True))
+
+```
+
+```mermaid
+graph LR
+    1 ---|1.5| 2
+    1 ---|1.1| 3
+    1 ---|1.4| 4
+    4 ---|5.2| 2
+    2 ---|2.0| 3
+    3 ---|0.7| 4
 
 ```
 
