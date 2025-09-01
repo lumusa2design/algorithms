@@ -1142,4 +1142,146 @@ graph LR
 
 ```
 
+## 📥 [Queue (or FIFO Structure)](./Queue.py)
+
+> A Queue is a Linear Data Structure that follows the FIFO (First In First Out) principle.
+
+### ✅ Key Properties
+
+- Elements are added at the tail and removed from the head.
+- Used in scheduling, buffering, and breadth-first search [(BFS)](../graph_traversal_algorithms/BFS.py)
+
+### 🔧 Core operations
+
+- **Enqueue**: insert element at the back.
+- **Dequeue**: remove element from the front.
+- **is_empty**: check if the queue is empty
+- **head**: inspect the front element without removing it.
+- **tail**: inspect the tail element without removing it.
+- **clear queue**: remove all elements.
+
+### ⏱ Time Complexity
+
+| Operation | Complexity |
+|-----------|:----------:|
+| enqueue   |   *O(n)*   |
+| dequeue   |   *O(1)*   |
+| head/tail |   *O(1)*   |
+| is empty  |   *O(1)*   |
+
+
+### 👨🏼‍💻 Code Review
+
+**Class initialize**
+```python
+class Queue:
+    def __init__(self):
+        self.length = 0
+        self.elements = []
+```
+- Queue is backed by a  **Python list**
+- `length` is tracked manually (though `len(self.elements)` could also be used).
+
+**enqueue**
+
+```python
+    def enqueue(self, e):
+        self.elements.insert(0, e)
+        self.length +=1
+```
+- Adds new elements at the tail.
+
+**dequeue**
+
+```python
+    def dequeue(self):
+        self.length -=1
+        return self.elements.pop()
+```
+- removes and returns the head.
+
+**is empty**
+
+```python
+    def is_empty(self):
+        return self.length == 0
+```
+
+- checks if the queue is empty.
+
+**head**
+
+```python
+    def head(self):
+        return self.elements[-1]
+```
+
+- returns front element without removing it.
+
+**tail**
+
+```python
+    def tail(self):
+        return self.elements[0]
+```
+
+- returns tail element without removing it
+
+**clear queue**
+
+```python
+    def clear_queue(self):
+        self.elements = []
+        self.length = 0
+```
+
+- resets the queue
+
+**len**
+
+```python
+   def __len__(self):
+        return self.length
+```
+- allows `len(queue)`
+
+
+**repr**
+
+```python
+
+    def __repr__(self):
+        repre = ""
+        for i in range(len(self)):
+            if(i < len(self)-1):
+                repre += f"{self.elements[i]} ->"
+            else:
+                repre += f"{self.elements[i]}"
+        return repre
+```
+
+- prints visually the queue
+
+### 📍 Use example
+
+```python
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+
+print(q)         
+print(q.head())  
+print(q.tail())  
+
+q.dequeue()     
+print(q)     
+```
+
+```mermaid
+graph LR
+    H((Head)) --> N1[10] --> N2[20] --> N3[30] --> T((Tail))
+
+```
+
 *(coming soon)*
