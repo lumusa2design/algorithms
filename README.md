@@ -154,9 +154,9 @@ They help solve problems like pathfinding, cycle detection, connected component 
 - [`Depth-First Search (DFS)  `](./graph_traversal_algorithms/DFS.py)  
 - [`Dijkstra’s Algorithm`](./graph_traversal_algorithms/dijkstra_algorithm.py)  
 - [`A* (A Star)`](./graph_traversal_algorithms/Astar.py)
+- [`Bellman-Ford`](./graph_traversal_algorithms/bellmanford.py)
 ### 🛠️ To implement:
 
-- [ ] `Bellman-Ford`  
 - [ ] `Floyd-Warshall`  
 - [ ] `Johnson's Algorithm`  
 - [ ] `Topological Sort`  
