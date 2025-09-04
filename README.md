@@ -217,7 +217,6 @@ These algorithms are key to various branches of engineering and mathematics and 
 
 ### 🛠️ To implement
 
-- [ ] `Gauss Jordan Elimination`
 - [ ] `QR Descomposition`
 - [ ] `Brent's Method`
 - [ ] `Fixed Point Iteration`
