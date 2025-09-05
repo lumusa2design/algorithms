@@ -214,7 +214,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Tribonacci`](./numerical_algorithms/tribonacci.py)
 - [`Cholesky Descomposition`](./numerical_algorithms/cholesky_decomposition.py)
 - [`Gauss Jordan Elimination`](./numerical_algorithms/gauss_jordan_elimination.py)
-
+- [`Montecarlo's Algorithm`](./numerical_algorithms/montecarlo_aproximation.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
