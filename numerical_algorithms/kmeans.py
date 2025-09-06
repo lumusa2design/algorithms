@@ -1,0 +1,2 @@
+
+def squared_euclidean()
