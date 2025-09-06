@@ -228,7 +228,6 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [ ] `Runge-Kutta Methods`
 - [ ] `Nash Balance`
 - [ ] `K-Means`
-- [ ] `Montecarlo's Algorithm`
 - [ ] `LU Decomposition`
 - [ ] `Gauss-Seidel Iteration`
 - [ ] `Simpson's Rule`
