@@ -215,6 +215,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Cholesky Descomposition`](./numerical_algorithms/cholesky_decomposition.py)
 - [`Gauss Jordan Elimination`](./numerical_algorithms/gauss_jordan_elimination.py)
 - [`Montecarlo's Algorithm`](./numerical_algorithms/montecarlo_aproximation.py)
+- [`K-Means`](./numerical_algorithms/kmeans.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
@@ -227,7 +228,6 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [ ] `Gradient Descent`
 - [ ] `Runge-Kutta Methods`
 - [ ] `Nash Balance`
-- [ ] `K-Means`
 - [ ] `LU Decomposition`
 - [ ] `Gauss-Seidel Iteration`
 - [ ] `Simpson's Rule`
