@@ -1,5 +1,3 @@
-from numpy import array
-
 def beam_search(distances, beta):
     path_far = [[list(), 0]]
     for i, tier in enumerate(distances):
