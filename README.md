@@ -124,9 +124,9 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Interpolation Search`](./search_algorithms/interpolation_search.py)
 - [`Fibonacci Search`](./search_algorithms/fibonacci_search.py)
 - [`Ternary Search`](./search_algorithms/ternary_search.py)
+- [`Beam Search`](./search_algorithms/beam_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Beam Search`
 - [ ] `Bidirectional Search`
 
 🔙 [Go to Table of Contents](#-table-of-contents)
