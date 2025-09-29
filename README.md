@@ -88,7 +88,7 @@ Different data structures that store large amounts of information in various way
 
 ### 🛠️ To implement:
 
-- [ ] `B Tree`
+- [ ] `B Tree` (working on)
 - [ ] `Disjoint Set (Union Find)`
 - [ ] `Segment Tree`
 - [ ] `Fenwick Tree (Binary Indexed Tree)`
