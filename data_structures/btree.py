@@ -26,11 +26,21 @@ class BTree:
             self.root = temp
             temp.child.append(root)
             self.split_child(temp, 0)
+            self.insert_non_full(temp)
+
 
     def split_child(self, node_child,key_len ):
-        i = len(node_child.key) -1
-        if node_child.leaf:
-            node_child.key.append(None)
+        minimum = self.minimum
+        y = node_child.child[key_len]
+        z = BNode(leaf=y.leaf)
+        node_child.insert(key_len, y.key[minimum -1])
+        z.key = y.key[minimum: (2*minimum) - 1]
+        y.key = y.key[0:minimum-1]
+
+        if not y.leaf:
+            z.child = y.child[minimum: 2 * minimum]
+            y.child = y.child[0: minimum - 1]
+        node_child.child.insert(key_len + 1, z)
 
 
 
