@@ -1,15 +1,16 @@
-class BNode():
+class BNode:
     def __init__(self, leaf=True):
         self.key = []
         self.child = []
-        self.leaf = True
-        length = 0
+        self.leaf = leaf
 
     def __str__(self, level=0):
-        print(f"Level {level}: {self.key}")
+        result = "  " * level + f"Level {level}: {self.key}\n"
         if not self.leaf:
-            for child in self.child:
-                child.display(level + 1)
+            for c in self.child:
+                result += c.__str__(level + 1)
+        return result
+
 
 class BTree:
     def __init__(self, minimum):
@@ -17,31 +18,49 @@ class BTree:
         self.minimum = minimum
 
     def display(self):
-        print(self.root)
+        print(self.root, end="")
 
     def insert(self, key):
         root = self.root
-        if len(root.key) == (2 * self.minimum) - 1:
-            temp = BNode()
-            self.root = temp
+        t = self.minimum
+
+        if len(root.key) == (2 * t) - 1:
+            temp = BNode(False)
             temp.child.append(root)
             self.split_child(temp, 0)
-            self.insert_non_full(temp)
+            self.root = temp
+            self.insert_non_full(temp, key)
+        else:
+            self.insert_non_full(root, key)
 
+    def insert_non_full(self, node, value):
+        i = len(node.key) - 1
+        if node.leaf:
+            node.key.append(None)
+            while i >= 0 and value < node.key[i]:
+                node.key[i + 1] = node.key[i]
+                i -= 1
+            node.key[i + 1] = value
+        else:
+            while i >= 0 and value < node.key[i]:
+                i -= 1
+            i += 1
+            if len(node.child[i].key) == (2 * self.minimum) - 1:
+                self.split_child(node, i)
+                if value > node.key[i]:
+                    i += 1
+            self.insert_non_full(node.child[i], value)
 
-    def split_child(self, node_child,key_len ):
-        minimum = self.minimum
-        y = node_child.child[key_len]
-        z = BNode(leaf=y.leaf)
-        node_child.insert(key_len, y.key[minimum -1])
-        z.key = y.key[minimum: (2*minimum) - 1]
-        y.key = y.key[0:minimum-1]
-
-        if not y.leaf:
-            z.child = y.child[minimum: 2 * minimum]
-            y.child = y.child[0: minimum - 1]
-        node_child.child.insert(key_len + 1, z)
-
-
+    def split_child(self, node_parent, index):
+        t = self.minimum
+        node_to_split = node_parent.child[index]
+        new_node = BNode(node_to_split.leaf)
+        node_parent.key.insert(index, node_to_split.key[t - 1])
+        node_parent.child.insert(index + 1, new_node)
+        new_node.key = node_to_split.key[t:]
+        node_to_split.key = node_to_split.key[:t - 1]
+        if not node_to_split.leaf:
+            new_node.child = node_to_split.child[t:]
+            node_to_split.child = node_to_split.child[:t]
 
 
