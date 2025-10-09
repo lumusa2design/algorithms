@@ -86,10 +86,9 @@ Different data structures that store large amounts of information in various way
 - [`Heap`](./data_structures/heap.py)
 - [`B Tree`](./data_structures/btree.py)
 
-### 🛠️ To implement:
 
+### 🛠️ To implement:
 - [ ] `Disjoint Set (Union Find)`
-- [ ] `Trie`
 - [ ] `Segment Tree`
 - [ ] `Fenwick Tree (Binary Indexed Tree)`
 
