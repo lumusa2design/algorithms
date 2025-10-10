@@ -60,6 +60,7 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Bitonic sort`](./sortings_algorithms/bitonic_sort.py)
 
 ### 🛠️ To Implement
+- `cyclic sort`
 
 ---
 
