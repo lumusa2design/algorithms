@@ -319,71 +319,71 @@ Text algorithms include techniques for searching and matching patterns in text (
 
 > Here's a collection of practical applications for each algorithm, organized by type and real-world context.
 
-| 🧠 **Algorithm**              | 📂 **Type**             | 🔍 **Real-World Application**                                                       |
-|------------------------------|-------------------------|--------------------------------------------------------------------------------------|
-| Bogosort                     | Sorting                 | Educational joke to explain inefficient algorithms.                                 |
-| Bubblesort                   | Sorting                 | Teaching sorting basics to beginners or children.                                   |
-| Mergesort                    | Sorting                 | Splitting and merging large datasets, external file sorting.                        |
-| Quicksort                    | Sorting                 | Sorting products by price in e-commerce.                                            |
-| Countingsort                 | Sorting                 | Grade distribution for exams (integers 0-100).                                      |
-| Heap Sort                    | Sorting                 | Priority queue sorting (e.g. scheduling tasks).                                     |
-| Radix Sort                   | Sorting                 | Sorting bank account numbers or ZIP codes.                                          |
-| Bucket Sort                  | Sorting                 | Grouping scores or age ranges efficiently.                                          |
-| Shell Sort                   | Sorting                 | Sorting nearly sorted datasets more efficiently.                                    |
-| Binary Tree                  | Data Structure          | Menu hierarchies, expression parsing.                                               |
-| Stack                        | Data Structure          | Undo/Redo operations in editors.                                                    |
-| Queue                        | Data Structure          | Customer service waiting lines.                                                     |
-| Linked List                  | Data Structure          | Music playlist navigation or memory allocation.                                     |
-| Hash Table                   | Data Structure          | Fast key-value lookups (e.g. caches, DNS resolution).                               |
-| Matrix                       | Data Structure          | Game boards, maps, and image processing.                                            |
-| AVL Tree                     | Data Structure          | Balanced index trees in databases.                                                  |
-| Heap                         | Data Structure          | Event simulation, task schedulers.                                                  |
-| Trie                         | Data Structure          | Autocomplete search systems.                                                        |
-| Linear Search                | Search                  | Searching an unsorted contact list.                                                 |
-| Binary Search                | Search                  | Looking up words in a dictionary.                                                   |
-| Interpolation Search         | Search                  | Finding a value with linear distribution (e.g. in surveys).                         |
-| Fibonacci Search             | Search                  | Large list searches to minimize access comparisons.                                 |
-| Greedy Search Tree           | Search                  | Approximate pathfinding in maps.                                                    |
-| Backtracking (N-Queens)      | Search                  | Solving Sudoku or constraint-based puzzles.                                         |
-| Jump Search                  | Search                  | Searching faster in sorted data blocks.                                             |
-| DFS                          | Graph                   | Exploring all possible paths in a maze.                                             |
-| BFS                          | Graph                   | Finding shortest path in unweighted graphs (e.g. social networks).                  |
-| Dijkstra                     | Graph                   | GPS route finding in road networks.                                                 |
-| A*                           | Graph                   | Game AI pathfinding with heuristics.                                                |
-| Bellman-Ford                 | Graph                   | Finding shortest paths with negative edge weights.                                  |
-| Floyd-Warshall               | Graph                   | All-pairs shortest path in transport networks.                                      |
-| Kruskal                      | Graph                   | Designing low-cost wiring or power grids.                                           |
-| Prim                         | Graph                   | Network cable layout with minimal total cost.                                       |
-| Tarjan / Kosaraju            | Graph                   | Detecting circular dependencies in software modules.                                |
-| Topological Sort             | Graph                   | Task scheduling with prerequisites (e.g. courses).                                  |
-| Newton-Raphson               | Numerical               | Finding roots in physics and engineering equations.                                 |
-| Bisection Method             | Numerical               | Solving nonlinear equations with known sign change.                                 |
-| Modular Exponentiation       | Numerical               | Used in RSA and Diffie-Hellman cryptographic systems.                               |
-| Eratosthenes Sieve           | Numerical               | Generating prime numbers for security applications.                                 |
-| Euclidean Algorithm          | Numerical               | Simplifying fractions, computing GCD in encryption.                                 |
-| Taylor Polynomial            | Numerical               | Function approximation in physics simulations.                                      |
-| Gauss Jordan                 | Numerical               | Solving systems of linear equations.                                                |
-| Spline Interpolation         | Numerical               | Curve fitting in animations or robotics.                                            |
-| Runge-Kutta                  | Numerical               | Simulating physical systems (e.g. pendulums, circuits).                             |
-| Monte Carlo Method           | Numerical               | Risk analysis, financial modeling, AI simulations.                                  |
-| Gradient Descent             | Numerical               | Optimizing machine learning models.                                                 |
-| K-Means                      | Numerical               | Customer segmentation and image compression.                                        |
-| Mutation                     | Genetic                 | Introducing variability in evolutionary solutions.                                  |
-| Crossover (1P, 2P, Uniform)  | Genetic                 | Combining features from parents in simulations.                                     |
-| NSGA-II                      | Genetic                 | Multi-objective optimization (e.g. time vs cost).                                   |
-| Tournament Selection         | Genetic                 | Evolutionary fitness selection (AI, simulations).                                   |
-| Elitism                      | Genetic                 | Preserving best candidates during evolution.                                        |
-| Genetic Sudoku               | Genetic                 | Solving Sudoku puzzles with evolutionary search.                                    |
-| Caesar Cipher                | Text                    | Simple message encryption.                                                          |
-| Vigenère Cipher              | Text                    | Basic polyalphabetic cipher for secure messages.                                    |
-| Huffman Encoding             | Text                    | Compressing files using character frequency.                                        |
-| Rabin-Karp                   | Text                    | Fast pattern search in long texts (e.g. plagiarism detection).                      |
-| KMP                          | Text                    | Efficient text searching with pattern preprocessing.                                |
-| LZ77 / LZ78                  | Text                    | File compression in ZIP and PNG formats.                                            |
-| Base64 Encoding              | Text                    | Encoding binary data for email or URLs.                                             |
-| Levenshtein Distance         | Text                    | Spelling correction and fuzzy matching.                                             |
-| Anagram Checker              | Text                    | Word games or search engines.                                                       |
-| Regex Matching               | Text                    | Validating emails, passwords, or complex text inputs.                               |
+| 🧠 **Algorithm**              | 📂 **Type**             | 🔍 **Real-World Application**                                                       | Done |
+|------------------------------|-------------------------|--------------------------------------------------------------------------------------|---|
+| Bogosort                     | Sorting                 | Educational joke to explain inefficient algorithms.                                 | ✅ |
+| Bubblesort                   | Sorting                 | Teaching sorting basics to beginners or children.                                   |   |
+| Mergesort                    | Sorting                 | Splitting and merging large datasets, external file sorting.                        |   |
+| Quicksort                    | Sorting                 | Sorting products by price in e-commerce.                                            |   |
+| Countingsort                 | Sorting                 | Grade distribution for exams (integers 0-100).                                      |   |
+| Heap Sort                    | Sorting                 | Priority queue sorting (e.g. scheduling tasks).                                     |   |
+| Radix Sort                   | Sorting                 | Sorting bank account numbers or ZIP codes.                                          |   |
+| Bucket Sort                  | Sorting                 | Grouping scores or age ranges efficiently.                                          |   |
+| Shell Sort                   | Sorting                 | Sorting nearly sorted datasets more efficiently.                                    |   |
+| Binary Tree                  | Data Structure          | Menu hierarchies, expression parsing.                                               |   |
+| Stack                        | Data Structure          | Undo/Redo operations in editors.                                                    |   |
+| Queue                        | Data Structure          | Customer service waiting lines.                                                     |   |
+| Linked List                  | Data Structure          | Music playlist navigation or memory allocation.                                     |   |
+| Hash Table                   | Data Structure          | Fast key-value lookups (e.g. caches, DNS resolution).                               |   |
+| Matrix                       | Data Structure          | Game boards, maps, and image processing.                                            |   |
+| AVL Tree                     | Data Structure          | Balanced index trees in databases.                                                  |   |
+| Heap                         | Data Structure          | Event simulation, task schedulers.                                                  |   |
+| Trie                         | Data Structure          | Autocomplete search systems.                                                        |   |
+| Linear Search                | Search                  | Searching an unsorted contact list.                                                 |   |
+| Binary Search                | Search                  | Looking up words in a dictionary.                                                   |   |
+| Interpolation Search         | Search                  | Finding a value with linear distribution (e.g. in surveys).                         |   |
+| Fibonacci Search             | Search                  | Large list searches to minimize access comparisons.                                 | ✅ |
+| Greedy Search Tree           | Search                  | Approximate pathfinding in maps.                                                    |   |
+| Backtracking (N-Queens)      | Search                  | Solving Sudoku or constraint-based puzzles.                                         |   |
+| Jump Search                  | Search                  | Searching faster in sorted data blocks.                                             |   |
+| DFS                          | Graph                   | Exploring all possible paths in a maze.                                             |   |
+| BFS                          | Graph                   | Finding shortest path in unweighted graphs (e.g. social networks).                  |   |
+| Dijkstra                     | Graph                   | GPS route finding in road networks.                                                 |   |
+| A*                           | Graph                   | Game AI pathfinding with heuristics.                                                |   |
+| Bellman-Ford                 | Graph                   | Finding shortest paths with negative edge weights.                                  |   |
+| Floyd-Warshall               | Graph                   | All-pairs shortest path in transport networks.                                      |   |
+| Kruskal                      | Graph                   | Designing low-cost wiring or power grids.                                           |   |
+| Prim                         | Graph                   | Network cable layout with minimal total cost.                                       |   |
+| Tarjan / Kosaraju            | Graph                   | Detecting circular dependencies in software modules.                                |   |
+| Topological Sort             | Graph                   | Task scheduling with prerequisites (e.g. courses).                                  |   |
+| Newton-Raphson               | Numerical               | Finding roots in physics and engineering equations.                                 |   |
+| Bisection Method             | Numerical               | Solving nonlinear equations with known sign change.                                 |   |
+| Modular Exponentiation       | Numerical               | Used in RSA and Diffie-Hellman cryptographic systems.                               |   |
+| Eratosthenes Sieve           | Numerical               | Generating prime numbers for security applications.                                 |   |
+| Euclidean Algorithm          | Numerical               | Simplifying fractions, computing GCD in encryption.                                 |   |
+| Taylor Polynomial            | Numerical               | Function approximation in physics simulations.                                      |   |
+| Gauss Jordan                 | Numerical               | Solving systems of linear equations.                                                |   |
+| Spline Interpolation         | Numerical               | Curve fitting in animations or robotics.                                            |   |
+| Runge-Kutta                  | Numerical               | Simulating physical systems (e.g. pendulums, circuits).                             |   |
+| Monte Carlo Method           | Numerical               | Risk analysis, financial modeling, AI simulations.                                  |   |
+| Gradient Descent             | Numerical               | Optimizing machine learning models.                                                 |   |
+| K-Means                      | Numerical               | Customer segmentation and image compression.                                        |   |
+| Mutation                     | Genetic                 | Introducing variability in evolutionary solutions.                                  |   |
+| Crossover (1P, 2P, Uniform)  | Genetic                 | Combining features from parents in simulations.                                     |   |
+| NSGA-II                      | Genetic                 | Multi-objective optimization (e.g. time vs cost).                                   |   |
+| Tournament Selection         | Genetic                 | Evolutionary fitness selection (AI, simulations).                                   |   |
+| Elitism                      | Genetic                 | Preserving best candidates during evolution.                                        |   |
+| Genetic Sudoku               | Genetic                 | Solving Sudoku puzzles with evolutionary search.                                    |   |
+| Caesar Cipher                | Text                    | Simple message encryption.                                                          |   |
+| Vigenère Cipher              | Text                    | Basic polyalphabetic cipher for secure messages.                                    |   |
+| Huffman Encoding             | Text                    | Compressing files using character frequency.                                        |   |
+| Rabin-Karp                   | Text                    | Fast pattern search in long texts (e.g. plagiarism detection).                      |   |
+| KMP                          | Text                    | Efficient text searching with pattern preprocessing.                                |   |
+| LZ77 / LZ78                  | Text                    | File compression in ZIP and PNG formats.                                            |   |
+| Base64 Encoding              | Text                    | Encoding binary data for email or URLs.                                             |   |
+| Levenshtein Distance         | Text                    | Spelling correction and fuzzy matching.                                             |   |
+| Anagram Checker              | Text                    | Word games or search engines.                                                       |   |
+| Regex Matching               | Text                    | Validating emails, passwords, or complex text inputs.                               |   |
 
 🔙 [Go to Table of Contents](#-table-of-contents)
 
