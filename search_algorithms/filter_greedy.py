@@ -16,4 +16,3 @@ def add_filter_greedy(quanty, b50=0, b20=0, b10=0, b5=0, b2=0, b1=0, c50=0, c20=
     return res, used
 
 
-print(add_filter_greedy(100,0,5,2))
