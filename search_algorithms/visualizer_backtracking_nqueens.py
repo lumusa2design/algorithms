@@ -90,3 +90,6 @@ class NQueensVisualizer:
 
 
 
+if __name__=='__main__':
+    reinas = NQueensVisualizer(8)
+
