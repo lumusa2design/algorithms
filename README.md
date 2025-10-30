@@ -57,10 +57,9 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Tim Sort`](./sortings_algorithms/tim_sort.py)
 - [`Pancake Sort`](./sortings_algorithms/pancake_sort.py)
 - [`Bead Sort`](./sortings_algorithms/bead_sort.py)
-- [`Bitonic sort`]
+- [`Bitonic sort`](./sortings_algorithms/bitonic_sort.py)
 
 ### 🛠️ To Implement
-- [ ] `Bitonic Sort`
 
 ---
 
