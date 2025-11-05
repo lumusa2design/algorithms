@@ -61,7 +61,7 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 
 ### 🛠️ To Implement
 - `cyclic sort`
-
+- `odd even sort`
 ---
 
 
