@@ -58,6 +58,7 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Pancake Sort`](./sortings_algorithms/pancake_sort.py)
 - [`Bead Sort`](./sortings_algorithms/bead_sort.py)
 - [`Bitonic sort`](./sortings_algorithms/bitonic_sort.py)
+- 
 
 ### 🛠️ To Implement
 - `cyclic sort`
