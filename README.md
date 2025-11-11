@@ -59,9 +59,8 @@ These are algorithms that take unordered lists and, after a series of steps, ret
 - [`Bead Sort`](./sortings_algorithms/bead_sort.py)
 - [`Bitonic sort`](./sortings_algorithms/bitonic_sort.py)
 - [`Cyclic sort`](./sortings_algorithms/cyclic_sort.py)
-
+- [`Odd Even Sort`](./sortings_algorithms/oddEven_sort.py)
 ### 🛠️ To Implement
-- `odd even sort`
 ---
 
 
