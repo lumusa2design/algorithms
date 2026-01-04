@@ -1,4 +1,5 @@
 import numpy as np
+
 class kalman1D:
     def __init__(self, state:float, variance:float, noise:float, sense_noise:float):
         self.state = state
@@ -20,10 +21,3 @@ class kalman1D:
         self.variance = (1 - kalmans_gain) * variance_pred
         return self.state
     
-
-if __name__ == "__main__":
-    kf = kalman1D(state=0.0, variance=1.0, noise=0.1, sense_noise=0.5)
-    measurements = [1.0, 2.0, 3.0, 2.5, 3.5]
-    for measure in measurements:
-        estimate = kf.step(measure)
-        print(f"Measurement: {measure}, Estimate: {estimate}")

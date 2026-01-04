@@ -37,12 +37,3 @@ class kalman1D_velocity:
         return self.state
 
 
-if __name__ == "__main__":
-    dt = 1/30
-    measurements = [100, 102, 105, 103, 110, 111, 109, 112]
-
-    kf = kalman1D_velocity(time_interval=dt, position=(measurements[0], 0.0), variance=10.0, noise=5.0, sense_noise=9.0)
-
-    for z in measurements:
-        state_hat = kf.step(z)
-        print(f"z={z:6.2f} -> poŝ={state_hat[0,0]:7.3f}   vel̂={state_hat[1,0]:7.3f}")
