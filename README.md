@@ -86,11 +86,11 @@ Different data structures that store large amounts of information in various way
 - [`AVL Tree`](./data_structures/avl_tree.py)
 - [`Heap`](./data_structures/heap.py)
 - [`B Tree`](./data_structures/btree.py)
+- [`Segment Tree`](./data_structures/segment_tree.py)
 
 
 ### 🛠️ To implement:
 - [ ] `Disjoint Set (Union Find)`
-- [ ] `Segment Tree`
 - [ ] `Fenwick Tree (Binary Indexed Tree)`
 
 🔙 [Go to Table of Contents](#-table-of-contents)
