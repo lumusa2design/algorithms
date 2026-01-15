@@ -7,7 +7,7 @@ from graph_traversal_algorithms.BFS import BFS_find_way
 from graph_traversal_algorithms.dijkstra_algorithm import dijkstra
 from matplotlib.animation import FuncAnimation, PillowWriter
 
-
+import networkx as nx
 
 def save_animation(original_matrix, path, start, end, filename="animation.gif", fps=10):
     matrix_of_visited = np.copy(original_matrix).astype(int)
@@ -109,18 +109,18 @@ if __name__ == "__main__":
     lab = create_laberynth_withPath(ancho, alto)
     grafo = laberynth_to_graph(lab)
 
-    """recorrido_dfs = DFS(grafo,inicio)
+    recorrido_dfs = DFS(grafo,inicio)
 
     # Mostrar camino en consola
     print("🟢 Camino correcto desde inicio hasta fin:")
     '''for paso in camino_correcto:
         print(paso)'''
 
-    visualizar_exploracion_y_camino(lab, recorrido_dfs, inicio, fin)
+    visualize_exploration_and_path(lab, recorrido_dfs, inicio, fin)
 
-    recorrido_bfs = BFS(grafo, inicio)
-    visualizar_exploracion_y_camino(lab, recorrido_bfs, inicio, fin)"""
-
+    recorrido_bfs = BFS_find_way(grafo, inicio, fin)
+    visualize_exploration_and_path(lab, recorrido_bfs, inicio, fin)
+"""
     recorrido_dfs_solution = DFS_find_way(grafo, inicio, fin)
     save_animation(lab, recorrido_dfs_solution, inicio, fin, filename="dfs_exploracion.gif", fps=20)
 
@@ -129,3 +129,4 @@ if __name__ == "__main__":
 
     recorrido_dijkstra = dijkstra(grafo, inicio, fin)
     save_animation(lab, recorrido_dijkstra, inicio, fin, filename="dijkstra_exploracion.gif", fps=20)
+"""
