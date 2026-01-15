@@ -157,9 +157,9 @@ They help solve problems like pathfinding, cycle detection, connected component 
 - [`Dijkstra’s Algorithm`](./graph_traversal_algorithms/dijkstra_algorithm.py)  
 - [`A* (A Star)`](./graph_traversal_algorithms/Astar.py)
 - [`Bellman-Ford`](./graph_traversal_algorithms/bellmanford.py)
+- [`Floyd-Warshall`](./graph_traversal_algorithms/floyd_warshall.py)
 ### 🛠️ To implement:
 
-- [ ] `Floyd-Warshall`  
 - [ ] `Johnson's Algorithm`  
 - [ ] `Topological Sort`  
 - [ ] `Tarjan's Algorithm`  
