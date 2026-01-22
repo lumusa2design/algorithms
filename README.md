@@ -127,6 +127,7 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Beam Search`](./search_algorithms/beam_search.py)
 -[`fractional knapsack problem`](./search_algorithms/frac_knapsack.py)
 - [`knapsack problem`](./search_algorithms/knapsack.py)
+- [`sentinel search algorithm`](./search_algorithms/sentinel_search_algorithm.py)
 ### 🛠️ To implement:
 
 - [ ] `Bidirectional Search`
