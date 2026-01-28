@@ -128,9 +128,9 @@ They can search for a specific number in a list, a node in a structure like a tr
 -[`fractional knapsack problem`](./search_algorithms/frac_knapsack.py)
 - [`knapsack problem`](./search_algorithms/knapsack.py)
 - [`sentinel search algorithm`](./search_algorithms/sentinel_search_algorithm.py)
+- [`Bidirectional Search`](./search_algorithms/bidirectional_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Bidirectional Search`
 
 🔙 [Go to Table of Contents](#-table-of-contents)
 
