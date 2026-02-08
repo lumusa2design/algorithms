@@ -127,9 +127,10 @@ They can search for a specific number in a list, a node in a structure like a tr
 - [`Beam Search`](./search_algorithms/beam_search.py)
 -[`fractional knapsack problem`](./search_algorithms/frac_knapsack.py)
 - [`knapsack problem`](./search_algorithms/knapsack.py)
+- [`sentinel search algorithm`](./search_algorithms/sentinel_search_algorithm.py)
+- [`Bidirectional Search`](./search_algorithms/bidirectional_search.py)
 ### 🛠️ To implement:
 
-- [ ] `Bidirectional Search`
 
 🔙 [Go to Table of Contents](#-table-of-contents)
 
@@ -158,9 +159,9 @@ They help solve problems like pathfinding, cycle detection, connected component 
 - [`A* (A Star)`](./graph_traversal_algorithms/Astar.py)
 - [`Bellman-Ford`](./graph_traversal_algorithms/bellmanford.py)
 - [`Floyd-Warshall`](./graph_traversal_algorithms/floyd_warshall.py)
+- [`Johnson's Algorithm`](./graph_traversal_algorithms/johnsons_algorithm.py)
 ### 🛠️ To implement:
-
-- [ ] `Johnson's Algorithm`  
+ 
 - [ ] `Topological Sort`  
 - [ ] `Tarjan's Algorithm`  
 - [ ] `Kosaraju's Algorithm`  
