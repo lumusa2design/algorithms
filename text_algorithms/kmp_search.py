@@ -1,3 +1,6 @@
+from builtins import len, print, range
+
+
 def kmp_search(pattern, text):
     k,i,size_p, size_t=0,0,len(pattern),len(text)
     f = [-1]+[0]*size_p
