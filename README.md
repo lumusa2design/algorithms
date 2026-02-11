@@ -301,7 +301,6 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Knuth-Morris-Pratt (KMP)`](./text_algorithms/knuth_morris_pratt_algorithm.py)
 ### 🛠️ To implement
 
-- [ ] ` Knuth-Morris-Pratt (KMP)`
 - [ ] `Boyer-Moore`
 - [ ] ` LZ77 / LZ78 Compression`
 - [ ] ` Run-Length Encoding (RLE)`
