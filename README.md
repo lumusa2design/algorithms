@@ -298,6 +298,7 @@ Text algorithms include techniques for searching and matching patterns in text (
 -  [`Huffman Algorithm`](./text_algorithms/huffman.py)
 - [`vigenere encoding`](./text_algorithms/vigenere_codex.py)
 - [`Rabin-Karp`](./text_algorithms/rabin_karp_algorithm.py)
+- [`Knuth-Morris-Pratt (KMP)`](./text_algorithms/knuth_morris_pratt_algorithm.py)
 ### 🛠️ To implement
 
 - [ ] ` Knuth-Morris-Pratt (KMP)`
