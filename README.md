@@ -87,10 +87,10 @@ Different data structures that store large amounts of information in various way
 - [`Heap`](./data_structures/heap.py)
 - [`B Tree`](./data_structures/btree.py)
 - [`Segment Tree`](./data_structures/segment_tree.py)
+- [`disjoint set (union find)`](./data_structures/disjoin_set.py)
 
 
 ### 🛠️ To implement:
-- [ ] `Disjoint Set (Union Find)`
 - [ ] `Fenwick Tree (Binary Indexed Tree)`
 
 🔙 [Go to Table of Contents](#-table-of-contents)

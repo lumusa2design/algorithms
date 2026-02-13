@@ -91,5 +91,5 @@ class NQueensVisualizer:
 
 
 if __name__=='__main__':
-    reinas = NQueensVisualizer(8)
+    reinas = NQueensVisualizer(6)
 
