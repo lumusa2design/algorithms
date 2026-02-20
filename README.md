@@ -302,7 +302,6 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Boyer-Moore`](./text_algorithms/boyer_moore.py)
 ### 🛠️ To implement
 
-- [ ] `Boyer-Moore`
 - [ ] ` LZ77 / LZ78 Compression`
 - [ ] ` Run-Length Encoding (RLE)`
 - [ ] ` Base64 Encoding`
