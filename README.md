@@ -300,13 +300,13 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Rabin-Karp`](./text_algorithms/rabin_karp_algorithm.py)
 - [`Knuth-Morris-Pratt (KMP)`](./text_algorithms/knuth_morris_pratt_algorithm.py)
 - [`Boyer-Moore`](./text_algorithms/boyer_moore.py)
+- [`ROT13`](./text_algorithms/rotthirteen.py)
 ### 🛠️ To implement
 
 - [ ] ` LZ77 / LZ78 Compression`
 - [ ] ` Run-Length Encoding (RLE)`
 - [ ] ` Base64 Encoding`
 - [ ] ` ASCII / Unicode Conversion`
-- [ ] ` ROT13`
 - [ ] ` Edit Distance (Levenshtein)`
 - [ ] ` Anagram Checker`
 - [ ] ` Trie Construction`
