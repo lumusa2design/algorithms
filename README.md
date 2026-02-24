@@ -301,6 +301,7 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Knuth-Morris-Pratt (KMP)`](./text_algorithms/knuth_morris_pratt_algorithm.py)
 - [`Boyer-Moore`](./text_algorithms/boyer_moore.py)
 - [`ROT13`](./text_algorithms/rotthirteen.py)
+- [`Anagram Checker`](./text_algorithms/anagram_checker.py)
 ### 🛠️ To implement
 
 - [ ] ` LZ77 / LZ78 Compression`
