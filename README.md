@@ -302,6 +302,7 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`Boyer-Moore`](./text_algorithms/boyer_moore.py)
 - [`ROT13`](./text_algorithms/rotthirteen.py)
 - [`Anagram Checker`](./text_algorithms/anagram_checker.py)
+- [`Trie Construction`](./text_algorithms/trie_construction.py)
 ### 🛠️ To implement
 
 - [ ] ` LZ77 / LZ78 Compression`
