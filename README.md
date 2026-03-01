@@ -310,7 +310,6 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [ ] ` Base64 Encoding`
 - [ ] ` ASCII / Unicode Conversion`
 - [ ] ` Edit Distance (Levenshtein)`
-
 - [ ] ` Regex-based Pattern Matching`
 - [ ] `Burrows-Wheeler Transfom`
 - [ ] `Suffix Array`
