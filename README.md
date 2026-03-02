@@ -303,13 +303,13 @@ Text algorithms include techniques for searching and matching patterns in text (
 - [`ROT13`](./text_algorithms/rotthirteen.py)
 - [`Anagram Checker`](./text_algorithms/anagram_checker.py)
 - [`Trie Construction`](./text_algorithms/trie_construction.py)
+- [`Edit Distance (Levenshtein)`](./text_algorithms/levenshtein.py)
 ### 🛠️ To implement
 
 - [ ] ` LZ77 / LZ78 Compression`
 - [ ] ` Run-Length Encoding (RLE)`
 - [ ] ` Base64 Encoding`
 - [ ] ` ASCII / Unicode Conversion`
-- [ ] ` Edit Distance (Levenshtein)`
 - [ ] ` Regex-based Pattern Matching`
 - [ ] `Burrows-Wheeler Transfom`
 - [ ] `Suffix Array`
