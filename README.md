@@ -220,6 +220,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Montecarlo's Algorithm`](./numerical_algorithms/montecarlo_aproximation.py)
 - [`K-Means`](./numerical_algorithms/kmeans.py)
 - [`Brent's Method`](./numerical_algorithms/brentsmethod.py)
+- [`Nash Balance`](./numerical_algorithms/nash_balance.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
@@ -230,7 +231,6 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [ ] `Standart Deviation and Variance`
 - [ ] `Gradient Descent`
 - [ ] `Runge-Kutta Methods`
-- [ ] `Nash Balance`
 - [ ] `LU Decomposition`
 - [ ] `Gauss-Seidel Iteration`
 - [ ] `Simpson's Rule`
