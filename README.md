@@ -219,10 +219,10 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Gauss Jordan Elimination`](./numerical_algorithms/gauss_jordan_elimination.py)
 - [`Montecarlo's Algorithm`](./numerical_algorithms/montecarlo_aproximation.py)
 - [`K-Means`](./numerical_algorithms/kmeans.py)
+- [`Brent's Method`](./numerical_algorithms/brentsmethod.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
-- [ ] `Brent's Method`
 - [ ] `Fixed Point Iteration`
 - [ ] `Lagrange Polynomial Interpolation`
 - [ ] `Spline Interpolation`
