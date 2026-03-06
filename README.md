@@ -222,6 +222,7 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`Brent's Method`](./numerical_algorithms/brentsmethod.py)
 - [`Nash Balance`](./numerical_algorithms/nash_balance.py)
 - [`Fourier Series`](./numerical_algorithms/fourier_series.py)
+- [`Conjugate Gradient Method`](./numerical_algorithms/conjugate_gradient_method.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
