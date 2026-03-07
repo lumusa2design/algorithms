@@ -221,13 +221,13 @@ These algorithms are key to various branches of engineering and mathematics and 
 - [`K-Means`](./numerical_algorithms/kmeans.py)
 - [`Brent's Method`](./numerical_algorithms/brentsmethod.py)
 - [`Nash Balance`](./numerical_algorithms/nash_balance.py)
+- [`Fourier Series`](./numerical_algorithms/fourier_series.py)
 ### 🛠️ To implement
 
 - [ ] `QR Descomposition`
 - [ ] `Fixed Point Iteration`
 - [ ] `Lagrange Polynomial Interpolation`
 - [ ] `Spline Interpolation`
-- [ ] `Fourier Series`
 - [ ] `Standart Deviation and Variance`
 - [ ] `Gradient Descent`
 - [ ] `Runge-Kutta Methods`
