@@ -10,3 +10,15 @@ def is_order(lista):
         if lista[i] > lista[i+1]:
             flag = False
     return flag
+
+def disorder_percent(lista):
+    if len(lista) < 2:
+        return 0
+
+    roturas = 0
+
+    for i in range(len(lista)-1):
+        if lista[i] > lista[i+1]:
+            roturas += 1
+
+    return roturas / (len(lista)-1)
