@@ -1,8 +1,8 @@
 from insertion_sort import *
 from merge_sort import *
-from numba import njit
+# from numba import njit
 
-@njit
+# @njit
 def tim_sort(array, min_run=32):
     size, runs = len(array), []
     for start in range(0, size, min_run):
@@ -25,3 +25,7 @@ def tim_sort(array, min_run=32):
         for i in range(size):
             array[i] = sorted_arr[i]
 
+if __name__ == "__main__":
+    arr = [5, 2, 9, 1, 5, 6]
+    tim_sort(arr)
+    print("Sorted array:", arr)

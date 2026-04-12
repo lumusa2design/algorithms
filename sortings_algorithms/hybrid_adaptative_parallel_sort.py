@@ -1,5 +1,7 @@
 from concurrent.futures import ProcessPoolExecutor
 from sortings_algorithms.insertion_sort import insertion_sort
+from auxiliar_functions import disorder_percent
+from sortings_algorithms.timsort import timsort
 import heapq
 
 
@@ -8,8 +10,8 @@ def hybrid_adaptative_parallel_sort(arr, num_processes):
         return sorted(arr)
     if len(arr) < 1000: 
         return insertion_sort(arr)
-    if len(arr) < 10000:
-            return sorted(arr)
+    if disorder_percent(arr) < 0.1: 
+        return timsort(arr)
     chunk_size = len(arr) // num_processes
     chunks = [arr[i:i + chunk_size] for i in range(0, len(arr), chunk_size)]
 

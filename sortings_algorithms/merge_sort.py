@@ -1,8 +1,8 @@
-from numba import njit
+#from numba import njit
 
 n_iter = 0
 
-@njit
+#@njit
 def merge_sort(unsorted_list):
     if len(unsorted_list) > 1:
         mid = len(unsorted_list) // 2
@@ -14,7 +14,7 @@ def merge_sort(unsorted_list):
         return res
     return unsorted_list
 
-@njit
+#@njit
 def merge(left, right):
     res = []
     i, j = 0,0
