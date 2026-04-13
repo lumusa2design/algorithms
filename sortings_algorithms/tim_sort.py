@@ -24,8 +24,3 @@ def tim_sort(array, min_run=32):
         sorted_arr = runs[0]
         for i in range(size):
             array[i] = sorted_arr[i]
-
-if __name__ == "__main__":
-    arr = [5, 2, 9, 1, 5, 6]
-    tim_sort(arr)
-    print("Sorted array:", arr)
