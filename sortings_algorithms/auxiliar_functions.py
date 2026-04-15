@@ -24,3 +24,11 @@ def disorder_percent(lista):
             roturas += 1
 
     return roturas / (len(lista)-1)
+
+
+def duplicate_percent(lista):
+    if not lista:
+        return 0
+
+    uniq = len(set(lista))
+    return 1 - (uniq / len(lista))
