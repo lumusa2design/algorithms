@@ -8,18 +8,24 @@ import heapq
 
 
 def hybrid_adaptative_parallel_sort(arr, num_processes):
+    if len(arr) <= 1:
+        return arr
+
     if len(arr) < num_processes:
         return sorted(arr)
-    if len(arr) < 1000: 
+
+    if len(arr) < 1000:
         return insertion_sort(arr)
-    if disorder_percent(arr) < 0.1: 
-        return tim_sort(arr)
-    if duplicate_percent(arr) > 0.5: 
-        return three_way_quicksort(arr, 0, len(arr) - 1)
-    chunk_size = len(arr) // num_processes
-    chunks = [arr[i:i + chunk_size] for i in range(0, len(arr), chunk_size)]
 
-    with ProcessPoolExecutor(max_workers=num_processes) as executor:
-        sorted_chunks = list(executor.map(sorted, chunks))
+    if disorder_percent(arr) < 0.1:
+        tim_sort(arr)
+        return arr
 
-    return list(heapq.merge(*sorted_chunks))
+    if duplicate_percent(arr) > 0.5:
+        three_way_quicksort(arr, 0, len(arr) - 1)
+        return arr
+
+    if len(arr) < 10000 and can_use_counting_sort(arr):
+        return counting_sort(arr)
+
+    return parallel_sort(arr, num_processes)
