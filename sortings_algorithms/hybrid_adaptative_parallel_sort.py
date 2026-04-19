@@ -4,6 +4,8 @@ from auxiliar_functions import disorder_percent
 from sortings_algorithms.tim_sort import tim_sort
 from sortings_algorithms.auxiliar_functions import duplicate_percent
 from sortings_algorithms.three_way_quicksort import three_way_quicksort
+from sortings_algorithms.auxiliar_functions import can_use_counting_sort
+from sortings_algorithms.counting_sort import counting_sort
 import heapq
 
 
