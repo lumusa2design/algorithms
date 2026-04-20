@@ -1,4 +1,4 @@
-from sortings_algorithms.auxiliar_functions import find_max
+from auxiliar_functions import find_max
 
 def counting_sort(arr):
     maxim = find_max(arr)

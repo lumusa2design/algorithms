@@ -1,12 +1,12 @@
 from concurrent.futures import ProcessPoolExecutor
-from sortings_algorithms.insertion_sort import insertion_sort
+from insertion_sort import insertion_sort
 from auxiliar_functions import disorder_percent
-from sortings_algorithms.tim_sort import tim_sort
-from sortings_algorithms.auxiliar_functions import duplicate_percent
-from sortings_algorithms.three_way_quicksort import three_way_quicksort
-from sortings_algorithms.auxiliar_functions import can_use_counting_sort
-from sortings_algorithms.counting_sort import counting_sort
-from sortings_algorithms.parallel_sort import parallel_sort
+from tim_sort import tim_sort
+from auxiliar_functions import duplicate_percent
+from three_way_quicksort import three_way_quicksort
+from auxiliar_functions import can_use_counting_sort
+from counting_sort import counting_sort
+from parallel_sort import parallel_sort
 import heapq
 
 
@@ -32,3 +32,34 @@ def hybrid_adaptative_parallel_sort(arr, num_processes):
         return counting_sort(arr)
 
     return parallel_sort(arr, num_processes)
+
+
+
+import random
+import time
+
+def test_algorithm():
+    tests = {
+        "pequeña": [5, 2, 9, 1, 5, 6],
+        "casi ordenada": list(range(10000)),
+        "muchos duplicados": [random.randint(0, 5) for _ in range(10000)],
+        "aleatoria": [random.randint(0, 100000) for _ in range(10000)],
+        "inversa": list(range(10000, 0, -1)),
+    }
+
+    for name, arr in tests.items():
+        original = arr.copy()
+
+        start = time.perf_counter()
+        result = hybrid_adaptative_parallel_sort(arr, num_processes=4)
+        end = time.perf_counter()
+
+        expected = sorted(original)
+
+        print(f"\nTest: {name}")
+        print(f"Correcto: {result == expected}")
+        print(f"Tiempo: {end - start:.6f} segundos")
+        print(f"Primeros 10: {result[:10]}")
+
+if __name__ == "__main__":
+    test_algorithm()
