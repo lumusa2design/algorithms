@@ -47,16 +47,34 @@ def benchmark_all():
     for case_name, arr in test_cases.items():
         print(f"\n=== Caso: {case_name} ===")
 
+        results = []
+
         for alg_name, alg_func in algorithms:
             try:
                 result = benchmark_algorithm(alg_name, alg_func, arr)
+
                 print(
                     f"{result['algorithm']:<30} "
                     f"Correcto: {result['correct']} "
                     f"Tiempo: {result['time']:.6f}s"
                 )
+
+                if result["correct"]:
+                    results.append(result)
+
             except Exception as e:
                 print(f"{alg_name:<30} ERROR: {e}")
+
+        podium = sorted(results, key=lambda x: x["time"])[:3]
+
+        print("\n🏆 Podio:")
+        medals = ["🥇", "🥈", "🥉"]
+
+        for i, result in enumerate(podium):
+            print(
+                f"{medals[i]} {result['algorithm']} "
+                f"- {result['time']:.6f}s"
+            )
 
 
 if __name__ == "__main__":
