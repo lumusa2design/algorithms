@@ -10,28 +10,30 @@ from parallel_sort import parallel_sort
 import heapq
 
 
-def hybrid_adaptative_parallel_sort(arr, num_processes):
+def hybrid_adaptive_parallel_sort(arr, num_processes):
     if len(arr) <= 1:
         return arr
 
-    if len(arr) < num_processes:
-        return sorted(arr)
+    n = len(arr)
 
-    if len(arr) < 1000:
+    if n < 1000:
         return insertion_sort(arr)
+
+    if can_use_counting_sort(arr):
+        return counting_sort(arr)
 
     if disorder_percent(arr) < 0.1:
         tim_sort(arr)
         return arr
 
     if duplicate_percent(arr) > 0.5:
-        three_way_quicksort(arr, 0, len(arr) - 1)
+        three_way_quicksort(arr, 0, n - 1)
         return arr
 
-    if len(arr) < 10000 and can_use_counting_sort(arr):
-        return counting_sort(arr)
+    if n > 100000:
+        return parallel_sort(arr, num_processes)
 
-    return parallel_sort(arr, num_processes)
+    return sorted(arr)
 
 
 
