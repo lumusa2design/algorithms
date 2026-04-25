@@ -2,7 +2,7 @@ import random
 import time
 import copy
 
-from hybrid_adaptative_parallel_sort import hybrid_adaptative_parallel_sort
+from hybrid_adaptative_parallel_sort import hybrid_adaptive_parallel_sort
 from tim_sort import tim_sort
 from three_way_quicksort import three_way_quicksort
 from counting_sort import counting_sort
@@ -37,7 +37,7 @@ def benchmark_all():
 
     algorithms = [
         ("Python sorted", lambda arr: sorted(arr)),
-        ("Hybrid Adaptive Parallel Sort", lambda arr: hybrid_adaptative_parallel_sort(arr, 4)),
+        ("Hybrid Adaptive Parallel Sort", lambda arr: hybrid_adaptive_parallel_sort(arr, 4)),
         ("Tim Sort propio", lambda arr: tim_sort(arr)),
         ("Three-Way QuickSort", lambda arr: three_way_quicksort(arr, 0, len(arr) - 1)),
         ("Counting Sort", lambda arr: counting_sort(arr)),
