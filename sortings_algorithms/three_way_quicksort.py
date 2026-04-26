@@ -1,3 +1,5 @@
+import random
+
 def three_way_quicksort(arr, low, high):
     if low < high:
         lt, gt = partition(arr, low, high)
@@ -5,7 +7,11 @@ def three_way_quicksort(arr, low, high):
         three_way_quicksort(arr, gt + 1, high)
 
 def partition(arr, low, high):
+    pivot_index = random.randint(low, high)
+    arr[low], arr[pivot_index] = arr[pivot_index], arr[low]
+
     pivot = arr[low]
+
     lt = low
     gt = high
     i = low + 1

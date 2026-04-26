@@ -53,7 +53,7 @@ def test_algorithm():
         original = arr.copy()
 
         start = time.perf_counter()
-        result = hybrid_adaptative_parallel_sort(arr, num_processes=4)
+        result = hybrid_adaptive_parallel_sort(arr, num_processes=4)
         end = time.perf_counter()
 
         expected = sorted(original)
