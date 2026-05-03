@@ -47,6 +47,13 @@ def benchmark_all():
         "muchos duplicados": [random.randint(0, 5) for _ in range(10_000)],
         "aleatoria": [random.randint(0, 100_000) for _ in range(10_000)],
         "inversa": list(range(10_000, 0, -1)),
+
+        "floats aleatorios": [random.random() for _ in range(10_000)],
+        "strings": [str(random.randint(0, 100_000)) for _ in range(10_000)],
+        "enteros rango enorme": [
+            random.randint(0, 10_000_000)
+            for _ in range(10_000)
+        ],
     }
 
     algorithms = [
