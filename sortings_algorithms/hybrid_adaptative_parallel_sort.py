@@ -19,7 +19,7 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
     if n < 1000:
         return insertion_sort(arr), "insertion_sort"
 
-    if can_use_counting_sort(arr):
+    if duplicate_percent(arr) > 0.25 and can_use_counting_sort(arr):
         return counting_sort(arr), "counting_sort"
 
     if disorder_percent(arr) < 0.1:
