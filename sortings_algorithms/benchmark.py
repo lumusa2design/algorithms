@@ -54,6 +54,14 @@ def benchmark_all():
             random.randint(0, 10_000_000)
             for _ in range(10_000)
         ],
+        "aleatoria gigante": [
+    random.randint(0, 1000000)
+    for _ in range(1_000_000)
+],
+"duplicados gigantes": [
+    random.randint(0, 100)
+    for _ in range(1_000_000)
+]
     }
 
     algorithms = [

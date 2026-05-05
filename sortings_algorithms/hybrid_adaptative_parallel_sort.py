@@ -16,7 +16,7 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
 
     n = len(arr)
 
-    if n < 1000:
+    if n < 64:
         return insertion_sort(arr), "insertion_sort"
 
     if duplicate_percent(arr) > 0.25 and can_use_counting_sort(arr):
@@ -26,14 +26,15 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
         tim_sort(arr)
         return arr, "tim_sort"
 
-    if duplicate_percent(arr) > 0.5:
+    if duplicate_percent(arr) > 0.3:
         three_way_quicksort(arr, 0, n - 1)
         return arr, "three_way_quicksort"
 
-    if n > 100000:
+    if n > 100_000:
         return parallel_sort(arr, num_processes), "parallel_sort"
 
-    return sorted(arr), "python_sorted"
+    tim_sort(arr)
+    return arr, "tim_sort_fallback"
 
 
 
