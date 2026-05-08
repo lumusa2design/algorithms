@@ -12,17 +12,16 @@ import heapq
 
 
 def hybrid_adaptive_parallel_sort(arr, num_processes):
-    features = analyze_array(arr)
+    features = analyze_array_sample(arr)
 
     n = features["n"]
 
     if n <= 1:
         return arr, "trivial"
 
-    if n < 64 and features["can_counting"]:
-        return counting_sort(arr), "counting_sort"
-
-    if features["duplicates"] > 0.25 and features["can_counting"]:
+    if features["can_counting"] and (
+        n < 1_000 or features["duplicates"] > 0.25 or n > 100_000
+    ):
         return counting_sort(arr), "counting_sort"
 
     if features["disorder"] < 0.1:
@@ -38,8 +37,6 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
 
     tim_sort(arr)
     return arr, "tim_sort_fallback"
-
-
 
 import random
 import time
