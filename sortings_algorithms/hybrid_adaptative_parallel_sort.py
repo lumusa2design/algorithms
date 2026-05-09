@@ -7,7 +7,7 @@ from three_way_quicksort import three_way_quicksort
 from auxiliar_functions import can_use_counting_sort
 from counting_sort import counting_sort
 from parallel_sort import parallel_sort
-from auxiliar_functions import analyze_array
+from auxiliar_functions import analyze_array_sample
 import heapq
 
 
