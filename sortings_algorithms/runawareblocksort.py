@@ -50,3 +50,6 @@ def run_aware_merge_sort(arr):
     return runs[0]
 
 
+if __name__ == "__main__":
+    arr = [1, 2, 3, 8, 9, 4, 5, 6, 0, 7]
+    print(run_aware_merge_sort(arr))
