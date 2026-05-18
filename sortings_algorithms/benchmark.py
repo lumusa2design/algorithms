@@ -6,6 +6,7 @@ from tim_sort import tim_sort
 from three_way_quicksort import three_way_quicksort
 from counting_sort import counting_sort
 from parallel_sort import parallel_sort
+from runawareblocksort import run_aware_merge_sort
 
 
 REPETITIONS = 10
@@ -36,45 +37,81 @@ def benchmark_algorithm(name, algorithm, arr):
         "algorithm": name,
         "chosen": chosen,
         "correct": final_result == sorted(arr),
-        "time": total_time / REPETITIONS
+        "time": total_time / REPETITIONS,
     }
 
 
 def benchmark_all():
     test_cases = {
         "pequeña": [random.randint(0, 100) for _ in range(100)],
+
         "casi ordenada": list(range(10_000)),
-        "muchos duplicados": [random.randint(0, 5) for _ in range(10_000)],
-        "aleatoria": [random.randint(0, 100_000) for _ in range(10_000)],
+
+        "muchos duplicados": [
+            random.randint(0, 5)
+            for _ in range(10_000)
+        ],
+
+        "aleatoria": [
+            random.randint(0, 100_000)
+            for _ in range(10_000)
+        ],
+
         "inversa": list(range(10_000, 0, -1)),
 
-        "floats aleatorios": [random.random() for _ in range(10_000)],
-        "strings": [str(random.randint(0, 100_000)) for _ in range(10_000)],
+        "floats aleatorios": [
+            random.random()
+            for _ in range(10_000)
+        ],
+
+        "strings": [
+            str(random.randint(0, 100_000))
+            for _ in range(10_000)
+        ],
+
         "enteros rango enorme": [
             random.randint(0, 10_000_000)
             for _ in range(10_000)
         ],
+
+        "runs largas": (
+            list(range(0, 2_500))
+            + list(range(2_500, 5_000))
+            + list(range(7_500, 10_000))
+            + list(range(5_000, 7_500))
+        ),
+
+        "runs mezcladas": (
+            list(range(0, 2_000))
+            + list(range(4_000, 6_000))
+            + list(range(2_000, 4_000))
+            + list(range(6_000, 10_000))
+        ),
+
         "aleatoria gigante": [
-    random.randint(0, 1000000)
-    for _ in range(1_000_000)
-],
-"duplicados gigantes": [
-    random.randint(0, 100)
-    for _ in range(1_000_000)
-]
+            random.randint(0, 1_000_000)
+            for _ in range(1_000_000)
+        ],
+
+        "duplicados gigantes": [
+            random.randint(0, 100)
+            for _ in range(1_000_000)
+        ],
     }
 
     algorithms = [
         ("Python sorted", lambda arr: sorted(arr)),
         ("Hybrid Adaptive Parallel Sort", lambda arr: hybrid_adaptive_parallel_sort(arr, 4)),
         ("Tim Sort propio", lambda arr: tim_sort(arr)),
+        ("Run-Aware Block Sort", lambda arr: run_aware_merge_sort(arr)),
         ("Three-Way QuickSort", lambda arr: three_way_quicksort(arr, 0, len(arr) - 1)),
         ("Counting Sort", lambda arr: counting_sort(arr)),
         ("Parallel Sort", lambda arr: parallel_sort(arr, 4)),
     ]
 
     global_scores = {
-        name: 0 for name, _ in algorithms
+        name: 0
+        for name, _ in algorithms
     }
 
     for case_name, arr in test_cases.items():
@@ -108,6 +145,7 @@ def benchmark_all():
         podium = sorted(results, key=lambda x: x["time"])[:3]
 
         print("\n🏆 Podio:")
+
         medals = ["🥇", "🥈", "🥉"]
         points = [3, 2, 1]
 
