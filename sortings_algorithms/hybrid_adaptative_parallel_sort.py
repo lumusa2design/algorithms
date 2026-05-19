@@ -1,6 +1,8 @@
 from concurrent.futures import ProcessPoolExecutor
+from pyexpat import features
 from insertion_sort import insertion_sort
 from auxiliar_functions import disorder_percent
+from runawareblocksort import run_aware_merge_sort
 from tim_sort import tim_sort
 from auxiliar_functions import duplicate_percent
 from three_way_quicksort import three_way_quicksort
@@ -25,8 +27,7 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
         return counting_sort(arr), "counting_sort"
 
     if features["disorder"] < 0.1:
-        tim_sort(arr)
-        return arr, "tim_sort"
+        return run_aware_merge_sort(arr), "run_aware_block_sort"
 
     if features["duplicates"] > 0.3:
         three_way_quicksort(arr, 0, n - 1)
