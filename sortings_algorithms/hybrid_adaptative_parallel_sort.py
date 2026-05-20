@@ -38,6 +38,8 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
 
     tim_sort(arr)
     return arr, "tim_sort_fallback"
+    tim_sort(arr)
+    return arr, "tim_sort_fallback"
 
 import random
 import time
