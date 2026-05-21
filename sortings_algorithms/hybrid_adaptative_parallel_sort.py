@@ -26,10 +26,12 @@ def hybrid_adaptive_parallel_sort(arr, num_processes):
     ):
         return counting_sort(arr), "counting_sort"
 
-    if features["disorder"] < 0.1:
+    if features["disorder"] < 0.05:
         return run_aware_merge_sort(arr), "run_aware_block_sort"
 
-    if features["duplicates"] > 0.3:
+    if features["duplicates"] > 0.25 and features["can_counting"]:
+        return counting_sort(arr), "counting_sort"
+    if features["duplicates"] > 0.30:
         three_way_quicksort(arr, 0, n - 1)
         return arr, "three_way_quicksort"
 
