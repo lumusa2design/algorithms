@@ -32,14 +32,3 @@ def duplicate_percent(lista):
 
     uniq = len(set(lista))
     return 1 - (uniq / len(lista))
-
-def can_use_counting_sort(arr):
-    if not arr:
-        return False
-
-    if not all(isinstance(x, int) for x in arr):
-        return False
-
-    value_range = max(arr) - min(arr)
-
-    return value_range <= len(arr) * 10
